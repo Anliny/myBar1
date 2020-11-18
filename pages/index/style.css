@@ -1,3 +1,8 @@
+	.appBar{
+		background-color: rgba(55,33,55,.5);
+		/* height: 50rpx; */
+		/* height:var(--status-bar-height); */
+	}
 	.content {
 		height: 100%;
 		background-size:750upx 100%;
@@ -81,7 +86,7 @@
 		overflow-y:auto;
 	}
 	.chatContanner .chatView{
-		width: 100%;
+		width: calc(100% - 40rpx);
 		/* height: calc(100% - 244upx); */
 		position: absolute;
 		bottom: 0;

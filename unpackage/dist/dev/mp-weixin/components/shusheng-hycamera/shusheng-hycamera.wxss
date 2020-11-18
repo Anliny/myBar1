@@ -29,8 +29,7 @@
 		left: 50%;
 		margin-left: -50px;
 		border: 2px solid #ffffff;
-		-webkit-border-radius: 50px;
-		        border-radius: 50px;
+		border-radius: 50px;
 		-webkit-transition: all 0.2s linear;
 		transition: all 0.2s linear;
 		text-align: center;
@@ -51,8 +50,7 @@
 		left: 50%;
 		margin-left: -50px;
 		border: 2px solid #ffffff;
-		-webkit-border-radius: 50px;
-		        border-radius: 50px;
+		border-radius: 50px;
 		text-align: center;
 		line-height: 60px;
 		color:#ffffff;

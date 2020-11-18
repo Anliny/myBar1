@@ -137,8 +137,7 @@ page,.content{
 	font-size: 19rpx;
 	padding:8rpx 10rpx;
 	text-align: center;
-	-webkit-border-radius: 30rpx;
-	        border-radius: 30rpx;
+	border-radius: 30rpx;
 }
 .btnhz{
 	color: #FFFFFF;
@@ -162,8 +161,7 @@ page,.content{
 	font-size: 19rpx;
 	padding:8rpx 10rpx;
 	text-align: center;
-	-webkit-border-radius: 30rpx;
-	        border-radius: 30rpx;
+	border-radius: 30rpx;
 }
 .btnsd{
 	color: #FFFFFF;

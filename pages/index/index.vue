@@ -1,5 +1,6 @@
 <template>
 	<view class="content" :style="{backgroundImage:`url(${BGUrl})`}" >
+		<view class="appBar" :style="{height:barheight+'px'}"></view>
 		<view class="header">
 			<view class="logo">
 				<image :src="logo"   mode="scaleToFill"></image>
@@ -97,6 +98,7 @@
 		},
 		data() {
 			return {
+				barheight: this.StatusBar,
 				scrollTop:200,
 				recharge:0,
 				old: {
@@ -193,6 +195,7 @@
 			 }, 1000);
 			this.getClientHight()
 		},
+		
 		 onPullDownRefresh() {
 		        //监听下拉刷新动作的执行方法，每次手动下拉刷新都会执行一次
 				var that=this;

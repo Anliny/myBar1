@@ -58,8 +58,7 @@
   border-top-style: solid;
   border-top-width: 1px;
   height: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 .uni-highlight.data-v-c05ffd80:active {
   background-color: #f1f1f1;

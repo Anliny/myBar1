@@ -6,6 +6,7 @@
 				"navigationBarTitleText": "uni-app",
 				"enablePullDownRefresh":true,
 				"backgroundTextStyle": "dark",
+				"navigationStyle":"custom",
 				"app-plus": {
 					// "softinputMode": "adjustResize"
 					"softinputMode": "adjustPan"

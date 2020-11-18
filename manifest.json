@@ -1,6 +1,6 @@
 {
     "name" : "酒吧",
-    "appid" : "__UNI__F0183B1",
+    "appid" : "__UNI__3728B78",
     "description" : "唱歌喝酒",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -57,7 +57,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wxece68cc13900b425",
+        "appid" : "",
         "setting" : {
             "urlCheck" : false,
             "es6" : true,

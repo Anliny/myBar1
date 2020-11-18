@@ -150,11 +150,9 @@
 		height: 180rpx;
 		width: 100%;
 		background-color: rgba(102,102,102,.4);
-		-webkit-border-radius: 90rpx;
-		        border-radius: 90rpx;
+		border-radius: 90rpx;
 		padding: 10rpx;
-		-webkit-box-sizing: border-box;
-		        box-sizing: border-box;
+		box-sizing: border-box;
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: flex;
@@ -162,8 +160,7 @@
 .logo{
 		height: 160rpx;
 		width: 160rpx;
-		-webkit-border-radius: 50%;
-		        border-radius: 50%;
+		border-radius: 50%;
 		/* background-color: #007AFF; */
 }
 .logo image{
@@ -193,8 +190,7 @@
 .avatar .item{
 		width: 93rpx;
 		height: 93rpx;
-		-webkit-border-radius: 50%;
-		        border-radius: 50%;
+		border-radius: 50%;
 		float: right;
 		margin-right: -10rpx;
 }
@@ -225,8 +221,7 @@
 		width: 100%;
 		height: 649rpx;
 		position: fixed;
-		-webkit-box-sizing: border-box;
-		        box-sizing: border-box;
+		box-sizing: border-box;
 		bottom: 0;
 }
 .bottomWapper .goodsWapper{
@@ -252,12 +247,10 @@
 .bottomWapper .goodsWapper .icon{
 		height: 156rpx;
 		width: 156rpx;
-		-webkit-border-radius: 10rpx;
-		        border-radius: 10rpx;
+		border-radius: 10rpx;
 		padding: 23rpx;
 		margin: auto;
-		-webkit-box-sizing: border-box;
-		        box-sizing: border-box;
+		box-sizing: border-box;
 }
 .bottomWapper .goodsWapper .icon image{
 		width: 32rpx;
@@ -297,11 +290,9 @@
 		font-size: 28rpx;
 		margin: 6rpx 0;
 		padding: 0rpx 20rpx;
-		-webkit-border-radius: 26rpx;
-		        border-radius: 26rpx;
+		border-radius: 26rpx;
 		text-align: right;
-		-webkit-box-sizing: border-box;
-		        box-sizing: border-box;
+		box-sizing: border-box;
 		color: #fff;
 }
 .payment .recharge image{
@@ -318,8 +309,7 @@
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: flex;
-		-webkit-border-radius: 26rpx;
-		        border-radius: 26rpx;
+		border-radius: 26rpx;
 		text-align: center;
 		color: #fff;
 }
@@ -330,13 +320,11 @@
 		        flex: 1;
 		padding-left:30rpx;
 		text-align: center;
-	    -webkit-border-radius: 53rpx 0 0 53rpx;
-	            border-radius: 53rpx 0 0 53rpx;
+	    border-radius: 53rpx 0 0 53rpx;
 }
 .payment .btnGroup .submit{
 		width: 144rpx;
-		-webkit-border-radius: 0 53rpx 53rpx 0;
-		        border-radius: 0 53rpx 53rpx 0;
+		border-radius: 0 53rpx 53rpx 0;
 		background-color: #674892;
 }
 .fillImage{

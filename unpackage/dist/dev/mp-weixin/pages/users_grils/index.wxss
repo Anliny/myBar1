@@ -31,8 +31,7 @@ page,.content{
 .swiper-box{
 	background-color: rgba(0,0,0,.3);
 	height: 440rpx;
-	-webkit-border-radius:0 0 100rpx 100rpx;
-	        border-radius:0 0 100rpx 100rpx;
+	border-radius:0 0 100rpx 100rpx;
 }
 .swiper-item{
 	display: -webkit-box;
@@ -62,12 +61,10 @@ page,.content{
 	width: 120rpx;
 	height: 120rpx;
 	margin: auto;
-	-webkit-border-radius: 50%;
-	        border-radius: 50%;
+	border-radius: 50%;
 }
 .swiper-item .avatar .shadow{
-	-webkit-box-shadow: 0 0 40rpx #fa12c1;
-	        box-shadow: 0 0 40rpx #fa12c1;
+	box-shadow: 0 0 40rpx #fa12c1;
 }
 .swiper-item .avatar .number{
 	position: absolute;
@@ -83,8 +80,7 @@ page,.content{
 	text-align: center;
 	line-height: 120rpx;
 	font-weight: bolder;
-	-webkit-border-radius: 50%;
-	        border-radius: 50%;
+	border-radius: 50%;
 	z-index: 10;
 	color: #fff;
 }
@@ -103,8 +99,7 @@ page,.content{
 .table .tableLeft .tableItem{
 	width: 440rpx;
 	height: 430rpx;
-	-webkit-border-radius: 140rpx;
-	        border-radius: 140rpx;
+	border-radius: 140rpx;
 	background-color: rgb(191 114 172 / 30%);
 	margin-bottom: 10rpx;
 	position: relative;
@@ -122,8 +117,7 @@ page,.content{
 .table .tableLeft .tableItem .user{
 	width: 120rpx;
 	height: 120rpx;
-	-webkit-border-radius: 50%;
-	        border-radius: 50%;
+	border-radius: 50%;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -132,8 +126,7 @@ page,.content{
 	margin: auto;
 }
 .shadow{
-	-webkit-box-shadow: 0 0 40rpx #fa12c1;
-	        box-shadow: 0 0 40rpx #fa12c1;
+	box-shadow: 0 0 40rpx #fa12c1;
 }
 .zIndex{
 	z-index: 100;
@@ -160,8 +153,7 @@ page,.content{
 	width: 250rpx;
 	height: 250rpx;
 	background-color: rgba(56,13,134,.3);
-	-webkit-border-radius: 100rpx;
-	        border-radius: 100rpx;
+	border-radius: 100rpx;
 	margin: auto;
 	margin-bottom: 10rpx;
 	position: relative;
@@ -186,8 +178,7 @@ page,.content{
 	color: #BF72AC;
 }
 .redius{
-	-webkit-border-radius: 50%;
-	        border-radius: 50%;
+	border-radius: 50%;
 }
 .textWapper{
 	padding: 5px 20px;

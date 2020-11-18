@@ -82,8 +82,7 @@ page,.content{
 			-webkit-justify-content: center;
 			        justify-content: center;
 		    background-color: #1A182B;
-			-webkit-border-radius: 20rpx;
-			        border-radius: 20rpx;
+			border-radius: 20rpx;
 			margin:10rpx 20rpx;
 			padding:20rpx 30rpx;
 }
@@ -114,8 +113,7 @@ page,.content{
 }
 .btnSubmit{
 			border:1px solid;
-			-webkit-border-radius: 50rpx!important;
-			        border-radius: 50rpx!important;
+			border-radius: 50rpx!important;
 			margin-top: 50rpx;
 			margin-left: 10%;
 			width: 580rpx;
@@ -124,7 +122,6 @@ page,.content{
 			text-align: center;
 			-webkit-border-image: -webkit-linear-gradient(#DA4586,#9B2CD9) 20 20;
 			        border-image: -webkit-linear-gradient(#DA4586,#9B2CD9) 20 20;
-			border-image: -webkit-gradient(linear,left top, left bottom,from(#DA4586),to(#9B2CD9)) 20 20;
 			border-image: linear-gradient(#DA4586,#9B2CD9) 20 20;
 			color:#DB4686;
 			font-size: 30rpx;

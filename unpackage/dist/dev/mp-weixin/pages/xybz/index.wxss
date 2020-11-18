@@ -57,7 +57,6 @@ page,.content{
 .btnTitle{
 	font-size: 77rpx;
 	text-align: center;
-	background: -webkit-gradient(linear, left top, right top, from(#972adf), to(#de4781));
 	background: -webkit-linear-gradient(left, #972adf, #de4781);
 	background: linear-gradient(to right, #972adf, #de4781);
 	-webkit-background-clip: text;
