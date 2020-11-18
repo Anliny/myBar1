@@ -1,0 +1,219 @@
+page,.content{
+	height: 100%;
+	width:100%;
+	
+}
+.header{
+	width:100%;
+	padding-bottom: 347upx;
+}
+.head_img1{
+		width:208upx;
+		height:208upx;
+		text-align: center;
+		position: absolute;
+		margin-left: 270upx;
+		margin-top:113upx;
+		padding-bottom: 10upx;
+		
+	}
+.head_img2{
+		width:206upx;
+		height:206upx;
+		position: absolute;
+		margin-left: 270upx;
+		margin-top:113upx;
+	}
+	.sex{
+		width:42upx;
+		height:42upx;
+		position: absolute;
+		margin-left: 465upx;
+		margin-top:175upx;
+	}
+	.sex_1{
+		width:22upx;
+		height:22upx;
+		position: absolute;
+		margin-left: 476upx;
+		margin-top:185upx;
+	}
+	.nickname{
+		color:#FFFFFF;
+		font-size: 32upx;
+		text-align: center;
+		// padding-bottom: ;
+	}
+	.btn-title{
+		color:#FFFFFF;
+		font-size: 22upx;
+		text-align: center;
+	}
+	.btn-sdhz{
+		width:100%;
+		padding-bottom: 40upx;;
+	}
+	.btn-hz{
+		width:339upx;
+		height:186upx;
+		line-height: 186upx;
+		position: absolute;
+		margin-left: 25upx;
+		margin-top: 53upx;
+		margin-right: 22upx;
+		z-index:99;
+	}
+	.btn-sd{
+		width:339upx;
+		height:186upx;
+		line-height: 186upx;
+		position: absolute;
+		margin-left: 386upx;
+		margin-top: 53upx;
+		z-index:99;
+	}
+	.hz-img{
+		width:29upx;
+		height:29upx;
+		position: absolute;
+		margin-left: 31upx;
+		margin-top: 43upx;
+	}
+	.sd-img{
+		width:29upx;
+		height:29upx;
+		position: absolute;
+		margin-left: 31upx;
+		margin-top: 43upx;
+	}
+	.myhz{
+		color:#FFFFFF;
+		font-size:22upx;
+		position: absolute;
+		margin-top:-34upx;
+		margin-left: 76upx;
+	}
+	.mysd{
+		color:#FFFFFF;
+		font-size:22upx;
+		position: absolute;
+		margin-top:-34upx;
+		margin-left: 76upx;
+	}
+.btntx{
+	width:75upx;
+	height:36upx;
+	line-height: 36upx;
+	position: absolute;
+	margin-left: 192upx;
+	margin-top:24upx;
+	color: #FFFFFF;
+	font-size: 19upx;
+	padding:8upx 10upx;
+	text-align: center;
+	border-radius: 30upx;
+	
+}
+.btnhz{
+	color: #FFFFFF;
+	line-height: cneter;
+	position: absolute;
+	margin-left: 136upx;
+	margin-top: 38upx;
+	font-size: 26upx;
+	
+}
+.btnhz text{
+	margin-left: 30upx;
+	
+}
+
+.btncz{
+	width:75upx;
+	height:36upx;
+	line-height: 36upx;
+	position: absolute;
+	margin-left: 192upx;
+	margin-top:24upx;
+	color: #FFFFFF;
+	font-size: 19upx;
+	padding:8upx 10upx;
+	text-align: center;
+	border-radius: 30upx;
+	
+}
+.btnsd{
+	color: #FFFFFF;
+	line-height: cneter;
+	position: absolute;
+	margin-left: 136upx;
+	margin-top: 38upx;
+	font-size: 26upx;
+	
+}
+
+.btnPHONT{
+	padding-top: 15upx;
+	line-height:95upx;
+	position: relative;
+	padding-bottom: 0upx;
+}
+
+.phone_img{
+	width:35upx;
+	height:35upx;
+	line-height: 35upx;
+	margin-left: 50upx;
+	margin-top: 300upx;
+}
+.right_img{
+	width:16upx;
+	height:24upx;
+	margin-left:60%;
+}
+.btnPHONT text{
+	color:#FFFFFF;
+	margin-top:0upx;
+	margin-left:27upx;
+	font-size:30upx;
+	line-height: 35upx;
+}
+.btnPHONT  .xian{
+	border-bottom: 2upx solid #1A182B;
+	padding-top: 16upx;
+	width:100%;
+	z-index:99;
+}
+.wen_img{
+	width:35upx;
+	height:35upx;
+	line-height: 35upx;
+	margin-left: 50upx;
+	margin-top: 10upx;
+}
+.btnSubmit{
+	width:580upx;
+	text-align: center;
+	line-height: 88upx;
+	height:88upx;
+	// border:2upx solid #007AFF;
+	margin-left:80upx;
+	position: absolute;
+	z-index:;
+	top:1065upx;
+	color:#DB4686;
+	font-size: 28upx;
+}
+.tc_img{
+	width:580upx;
+	height:88upx;
+	
+}
+.btnSubmit view{
+	width:580upx;
+	line-height: 88upx;
+	height:88upx;
+	text-align: center;
+	position: absolute;
+	 margin-top:-120upx;
+}

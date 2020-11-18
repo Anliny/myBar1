@@ -1,0 +1,76 @@
+page,.content{
+	height: 100%;
+	width:100%;
+	
+}
+
+.sdbg{
+		width:80%;
+		height:310upx;
+		text-align: center;
+		margin-left: 10%;
+		margin-top:10%;
+		padding-bottom: 10upx;
+		
+	}
+	.header{
+		padding-bottom: 33upx;
+	}
+.wxlogo{
+	width:83upx;
+	height:83upx;
+	margin-top:146upx;
+	margin-left:28%;
+}
+.sdnum{
+	
+	margin-top:-92upx;
+	text-align: center;
+	margin-left:13%;
+	font-size:58upx;
+	color:#FFFFFF;
+}
+.btnTitle{
+	font-size: 77upx;
+	text-align: center;
+	background: linear-gradient(to right, #972adf, #de4781);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding-bottom: 20upx;
+}
+.ctime{
+	font-size:18upx;
+	text-align: center;
+	padding-bottom: 33upx;
+	color:#B8B6CF;
+	letter-spacing:5upx
+}
+.xlBTN{
+	width:90%;
+	margin-left: 5%;
+}
+// .uni-collapse.data-v-62f04c78{
+// 	background-color: #1A182B;
+// 	color:#FFFFFF;
+// }
+// .uni-collapse-cell.data-v-8f47561c {
+// 	background-color: #1A182B;
+// 	color:#FFFFFF;
+// }
+// .uni-collapse-cell--open.data-v-8f47561c {
+// 	background-color: #1A182B!important;
+// }
+// .uni-collapse-cell--hide.data-v-8f47561c {
+// 	background-color: #1A182B!important;
+// }
+.uni-collapse-cell.data-v-8f47561c {
+
+	border: none!important;
+}
+.BTNcontent{
+	padding: 8upx 20upx;
+	font-size: 24upx;
+	color:#E9E9EB;
+	line-height: 48upx;
+	letter-spacing:5upx
+}

@@ -1,0 +1,95 @@
+page,.content{
+	height: 110%;
+	width:100%;
+	
+}
+
+.sdbg{
+		width:80%;
+		height:310upx;
+		text-align: center;
+		
+		margin-left: 10%;
+		margin-top:10%;
+		padding-bottom: 10upx;
+		
+	}
+.mysd{
+	width:154upx;
+	height:38upx;
+	position: absolute;
+	top:160upx;
+	left:40%;
+}
+.sdnum{
+	position: absolute;
+	top:236upx;
+	text-align: center;
+	left:40%;
+	font-size:46upx;
+	color:#FFFFFF;
+}
+.example-body {
+		/* #ifndef APP-NVUE */
+		display: block;
+		color:#FFFFFF;
+		// padding:40upx 20upx;
+		/* #endif */
+	}
+	
+	.grid-item-box {
+			flex: 1;
+			/* position: relative;
+	*/
+			/* #ifndef APP-NVUE */
+			display: flex;
+			/* #endif */
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		    background-color: #1A182B;
+			border-radius: 20upx;
+			margin:10upx 20upx;
+			padding:20upx 30upx;
+		}
+		.image {
+			margin-left:-130upx;
+			margin-top:20upx;
+			width: 35upx;
+			height: 45upx;
+		}
+		.sd{
+			margin-left:40upx;
+			margin-top:-47upx;
+			padding-bottom: 20upx;
+		}
+		.many{
+			font-size:18upx;
+			padding-right: 12upx;
+			margin-left:-78upx;
+			margin-top: 15upx;
+		}
+		.text{
+			font-size:26upx;
+			margin-left:32upx;
+			margin-top: -30upx;
+		}
+		.active{
+			border:1px solid #A831C8;
+		}
+		.btnSubmit{
+			border:1px solid;
+			border-radius: 50upx!important;
+			margin-top: 50upx;
+			margin-left: 10%;
+			width: 580upx;
+			height: 88upx;
+			line-height: 88upx;
+			text-align: center;
+			border-image: -webkit-linear-gradient(#DA4586,#9B2CD9) 20 20;
+			border-image: -moz-linear-gradient(#DA4586,#9B2CD9) 20 20;
+			border-image: -o-linear-gradient(#DA4586,#9B2CD9) 20 20;
+			border-image: linear-gradient(#DA4586,#9B2CD9) 20 20;
+			color:#DB4686;
+			font-size: 30upx;
+		}
