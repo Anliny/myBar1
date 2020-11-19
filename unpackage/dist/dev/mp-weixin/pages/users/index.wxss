@@ -31,6 +31,7 @@ page,.content{
 .swiper-box{
 	background-color: rgba(0,0,0,.3);
 	height: 440rpx;
+	margin-top: 90rpx;
 	border-radius:0 0 100rpx 100rpx;
 }
 .swiper-item{
@@ -89,12 +90,19 @@ page,.content{
 	height: 470rpx;
 	width: 100%;
 	bottom: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
 }
 .table .tableLeft{
-	width: 490rpx;
 	height: 470rpx;
+	padding: 20rpx;
+	box-sizing: border-box;
+	overflow: hidden;
 	overflow-y: auto;
-	float: left;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
 }
 .table .tableLeft .tableItem{
 	width: 440rpx;
@@ -220,7 +228,7 @@ page,.content{
 	width: 200rpx;
 	height: 280rpx;
 	position: absolute;
-	top:38vh;
+	top:40vh;
 	right: -21rpx;
 }
 .bottles image{

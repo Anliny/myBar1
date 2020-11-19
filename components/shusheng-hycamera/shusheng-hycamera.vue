@@ -1,10 +1,16 @@
 <template>
 	<view class="hycamera">
 		<cover-image class="contentCamera" @tap="videoback" :src="cameraIcon" mode="scaleToFill"></cover-image>
-		
+		<cover-view class="textWapper">
+			<cover-view class="icon">Live</cover-view>
+			<cover-view class="text tk-acumin-pro">Current Songs</cover-view>
+		</cover-view>
 		<cover-view :class="buttonClass" @touchstart="buttonStart" @touchend="buttonEnd">
 			{{buttonNumber}}
 		</cover-view>
+		 <cover-view class="down">
+			 <image  :src="downIcon" mode="scaleToFill"></image>
+		 </cover-view>
 		
 		<camera   class="hycamera-camera" :device-position="back" bindstop="" flash="auto"></camera>
 	</view>
@@ -18,7 +24,8 @@
 				cameraIcon:"http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/camera/cameraIcon.png",
 				isLX: false,
 				buttonNumber:"",
-				back:'back'
+				back:'back',
+				downIcon:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/camera/down.png'
 			}
 		},
 		created() {
@@ -112,8 +119,6 @@
 						}
 					})
 				}
-				
-				
 			}
 		}
 	}
@@ -146,11 +151,11 @@
 		width: 60px;
 		position: absolute;
 		z-index: 999;
-		background-color: #3F536E;
+		background-color:rgb(193,112,173);
 		bottom: 50px;
 		left: 50%;
 		margin-left: -50px;
-		border: 2px solid #ffffff;
+		border: 8px solid rgba(66, 19, 53, 0.56);
 		border-radius: 50px;
 		transition: all 0.2s linear;
 		text-align: center;
@@ -186,5 +191,46 @@
 		z-index: 999;
 		bottom: 80px;
 		left: 20px;
+	}
+	.down{
+		height: 49rpx;
+		width: 49rpx;
+		position: absolute;
+		z-index: 999;
+		bottom: 140rpx;
+		left: 35%;
+		margin-left: -50px;
+		border-radius: 50px;
+		color: #ffffff;
+		background-color: rebeccapurple;
+	}
+	.down image{
+		width: 100%;
+		height: 100%;
+	}
+	.textWapper{
+		padding: 5px 20px;
+		margin-top: 258upx;
+		height: 139upx;
+		position: absolute;
+		z-index: 5;
+	}
+	.textWapper image{width: 100%;height: 100%;}
+	.textWapper .icon{
+		height: 20px;
+		color: rgb(74,154,126);
+		display: inline-block;
+		padding:0 20rpx;
+		text-align: center;
+		line-height: 20px;
+		background-color: #5555ff;
+		transform: skewX(-25deg) translate(10px);
+		font-family: Acumin Variable Concept;
+	}
+	.textWapper .text{
+		font-size: 30px;
+		color: #fff;
+		line-height: 45px;
+
 	}
 </style>

@@ -1,20 +1,31 @@
 <template>
 	<view class="content" :style="{background:`url(${BGUrl})`}" style="background-size: 750upx;">
+		<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
+		<view style="height: 75rpx;"></view>
 		<view class="header">
 			<view class="goBack" @click="handleGoBack">
 				<image class="icon" :src="leftIcon" mode="scaleToFill"></image>
 				回现场
 			</view>
 			
-			<view class="avatar">
+			<view class="avatar"> 
 				<view class="item" @click="goShare" v-for="(item,index) in avatarList" :key="index">
 					<image :src="item" mode="scaleToFill"></image>
 				</view>
 			</view>
 		</view>
 		
-		<swiper :loop="false" class="imageContainer" previous-margin="45rpx" next-margin="45rpx" >
+		<swiper :loop="false" class="imageContainer" :style="{height:`calc(100% - ${155+iStatusBarHeight}px)`}" previous-margin="45rpx" next-margin="45rpx" >
 			<swiper-item class="swiperitem" :style="{backgroundImage:'url('+item.bgUrl+')'}" v-for="(item,index) in imgList" :key="index">
+				
+				<view class="mediaWapper" v-if="item.mediaType">
+					<video id="myVideo" 
+					src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" @error="videoErrorCallback" :autoplay="true" loop></video>
+				</view>
+				<view class="mediaWapper" v-else>
+					<image :src="item.mediaUrl" mode="scaleToFill"></image>
+				</view>
+				
 				<view class="textWapper">
 					<view class="icon">{{item.song.icon}}</view>
 					<view class="text tk-acumin-pro">{{item.song.name}}</view>
@@ -97,6 +108,7 @@ export default {
 	},
 	data() {
 		return {
+			iStatusBarHeight: 0,
 			leftIcon:"http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/photos/left.png",
 			goodsBtnIcon:"http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/photos/goodsBtn.png",
 			goodsScrollTop:0,
@@ -126,7 +138,8 @@ export default {
 			tips:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/tips.png',
 			imgList: [
 				{
-					bgUrl:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/swiperBG2.jpg',
+					mediaUrl:require('@/static/images/movie.mp4'),
+					mediaType:1, //1是视频，0是图片
 					scrollTop:0,
 					id:1,
 					inputValue:'',
@@ -150,7 +163,8 @@ export default {
 						}
 					]
 				},{
-					bgUrl:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/swiperBG1.png',
+					mediaUrl:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/swiperBG1.png',
+					mediaType:0, //1是视频，0是图片
 					scrollTop:0,
 					song:{icon:'LIVE',name:'Current Songs'},
 					id:2,
@@ -205,6 +219,7 @@ export default {
 		}
 	},
 	onLoad() {
+		this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight
 		var imagelist=this.imgList;
 		var photo_video=uni.getStorageSync('photo_video');
 		console.log(photo_video+'========');
@@ -233,18 +248,15 @@ export default {
 			};
 		}
 		
-		imagelist.push(lists);
-		this.imgList=imagelist;
-		console.log(imagelist);
+		// imagelist.push(lists);
+		// this.imgList=imagelist;
+		// console.log(imagelist);
 	},
 	methods: {
 		// 去分享
 		goShare(){
 			uni.navigateTo({url:'/pages/share/index'});
 		},
-		
-		
-		
 		upper: function(e) {
 			console.log(e)
 		},
@@ -252,8 +264,8 @@ export default {
 			console.log(e)
 		},
 		scroll: function(e) {
-				console.log(e)
-				this.old.scrollTop = e.detail.scrollTop
+			console.log(e)
+			this.old.scrollTop = e.detail.scrollTop
 		},
 		
 		change(e) {
@@ -294,18 +306,10 @@ export default {
 			this.number = 0
 			this.$refs['pop'].hide()
 			this.$nextTick(()=>{
-				// this.imgList[this.index].scrollTop = this.$refs.refScollView[this.index].$refs.content.offsetHeight
-				
-				// 注意：想要拿到元素实例，需要在实例已经挂载到页面上才可以
-				// const query = uni.createSelectorQuery().in(this);
-				// query.select(`#content${this.index}`).boundingClientRect(data => {
-				// 	this.scrollTop = data.height
-				// }).exec();
-				
 				// 注意：想要拿到元素实例，需要在实例已经挂载到页面上才可以
 				const query = uni.createSelectorQuery().in(this);
-				query.select('#content').boundingClientRect(data => {
-					this.scrollTop = data.height
+				query.select('#content'+ this.index).boundingClientRect(data => {
+					this.imgList[this.index].scrollTop = data.height
 				}).exec();
 				this.isShowFillImage = true
 				setTimeout(() =>{
@@ -335,12 +339,14 @@ export default {
 					text:this.imgList[number].inputValue,
 				}
 			]
-			// console.log(this.)
 			this.imgList[number].inputValue = ""
 			this.index = null
 			this.$nextTick(()=>{
-				
-				this.imgList[number].scrollTop = this.$refs.refScollView[number].$refs.content.offsetHeight
+				const query = uni.createSelectorQuery().in(this);
+				query.select('#content'+ number).boundingClientRect(data => {
+					console.log(data)
+					this.imgList[number].scrollTop = data.height
+				}).exec();
 			})
 		},
 		// 返回聊天页面

@@ -1,5 +1,6 @@
 <template>
 	<view class="content" :style="{background:`url(${BGUrl})`}" style="background-size: 750upx;">
+		<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
 		<uni-swiper-dot :info="info" :current="current" field="content" :mode="mode">
 		    <swiper class="swiper-box" @change="change">
 		        <swiper-item v-for="(item ,index) in info" :key="index">
@@ -13,17 +14,13 @@
 		        </swiper-item>
 		    </swiper>
 		</uni-swiper-dot>
-		
 		<view class="textWapper">
 			<view class="icon" @tap="submitBoy" data-id="1"><text class="icon_text">Live</text><text class="sex">girls</text></view>
-			<view class="icon" ><text class="icon_text">Live</text><text class="sex">mens</text></view>
-			
 			<view class="text tk-acumin-pro">Current Songs</view>
 		</view>
 		<view class="bottles">
 			<image :src="bottles" mode="scaleToFill"></image> 
 		</view>
-		
 		<view class="table">
 			<view class="tableLeft">
 				<view class="tableItem" v-for="(table,index) in tableList.tableLeft" :key= "table.id">
@@ -65,9 +62,11 @@
 				tableList:tableList,
 				current: 0,
 				mode: 'round',
+				iStatusBarHeight: 0
 			}
 		},
 		onLoad() {
+			this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight
 		},
 		methods: {
 			change(e) {

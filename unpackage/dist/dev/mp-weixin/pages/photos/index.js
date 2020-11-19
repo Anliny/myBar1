@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/photos/index"],{
 
 /***/ 61:
-/*!*********************************************************************!*\
-  !*** D:/workspace/myBar1/main.js?{"page":"pages%2Fphotos%2Findex"} ***!
-  \*********************************************************************/
+/*!*******************************************************************!*\
+  !*** D:/Project/myBar1/main.js?{"page":"pages%2Fphotos%2Findex"} ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17,9 +17,9 @@ createPage(_index.default);
 /***/ }),
 
 /***/ 62:
-/*!**************************************************!*\
-  !*** D:/workspace/myBar1/pages/photos/index.vue ***!
-  \**************************************************/
+/*!************************************************!*\
+  !*** D:/Project/myBar1/pages/photos/index.vue ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -58,9 +58,9 @@ component.options.__file = "pages/photos/index.vue"
 /***/ }),
 
 /***/ 63:
-/*!*********************************************************************************!*\
-  !*** D:/workspace/myBar1/pages/photos/index.vue?vue&type=template&id=3e13e4bd& ***!
-  \*********************************************************************************/
+/*!*******************************************************************************!*\
+  !*** D:/Project/myBar1/pages/photos/index.vue?vue&type=template&id=3e13e4bd& ***!
+  \*******************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -80,9 +80,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 64:
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/workspace/myBar1/pages/photos/index.vue?vue&type=template&id=3e13e4bd& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/Project/myBar1/pages/photos/index.vue?vue&type=template&id=3e13e4bd& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -111,9 +111,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 65:
-/*!***************************************************************************!*\
-  !*** D:/workspace/myBar1/pages/photos/index.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/Project/myBar1/pages/photos/index.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -127,14 +127,25 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 66:
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/workspace/myBar1/pages/photos/index.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/Project/myBar1/pages/photos/index.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -233,6 +244,7 @@ var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumab
 
   data: function data() {var _ref;
     return _ref = {
+      iStatusBarHeight: 0,
       leftIcon: "http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/photos/left.png",
       goodsBtnIcon: "http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/photos/goodsBtn.png",
       goodsScrollTop: 0,
@@ -262,7 +274,8 @@ var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumab
     'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/tips.png'), _defineProperty(_ref, "imgList",
     [
     {
-      bgUrl: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/swiperBG2.jpg',
+      mediaUrl: __webpack_require__(/*! @/static/images/movie.mp4 */ 202),
+      mediaType: 1, //1是视频，0是图片
       scrollTop: 0,
       id: 1,
       inputValue: '',
@@ -286,7 +299,8 @@ var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumab
 
 
     {
-      bgUrl: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/swiperBG1.png',
+      mediaUrl: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/swiperBG1.png',
+      mediaType: 0, //1是视频，0是图片
       scrollTop: 0,
       song: { icon: 'LIVE', name: 'Current Songs' },
       id: 2,
@@ -341,6 +355,7 @@ var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumab
 
   },
   onLoad: function onLoad() {
+    this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight;
     var imagelist = this.imgList;
     var photo_video = uni.getStorageSync('photo_video');
     console.log(photo_video + '========');
@@ -369,18 +384,15 @@ var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumab
 
     }
 
-    imagelist.push(lists);
-    this.imgList = imagelist;
-    console.log(imagelist);
+    // imagelist.push(lists);
+    // this.imgList=imagelist;
+    // console.log(imagelist);
   },
   methods: {
     // 去分享
     goShare: function goShare() {
       uni.navigateTo({ url: '/pages/share/index' });
     },
-
-
-
     upper: function upper(e) {
       console.log(e);
     },
@@ -430,18 +442,10 @@ var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumab
       this.number = 0;
       this.$refs['pop'].hide();
       this.$nextTick(function () {
-        // this.imgList[this.index].scrollTop = this.$refs.refScollView[this.index].$refs.content.offsetHeight
-
-        // 注意：想要拿到元素实例，需要在实例已经挂载到页面上才可以
-        // const query = uni.createSelectorQuery().in(this);
-        // query.select(`#content${this.index}`).boundingClientRect(data => {
-        // 	this.scrollTop = data.height
-        // }).exec();
-
         // 注意：想要拿到元素实例，需要在实例已经挂载到页面上才可以
         var query = uni.createSelectorQuery().in(_this);
-        query.select('#content').boundingClientRect(function (data) {
-          _this.scrollTop = data.height;
+        query.select('#content' + _this.index).boundingClientRect(function (data) {
+          _this.imgList[_this.index].scrollTop = data.height;
         }).exec();
         _this.isShowFillImage = true;
         setTimeout(function () {
@@ -471,12 +475,14 @@ var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumab
         text: this.imgList[number].inputValue }]);
 
 
-      // console.log(this.)
       this.imgList[number].inputValue = "";
       this.index = null;
       this.$nextTick(function () {
-
-        _this2.imgList[number].scrollTop = _this2.$refs.refScollView[number].$refs.content.offsetHeight;
+        var query = uni.createSelectorQuery().in(_this2);
+        query.select('#content' + number).boundingClientRect(function (data) {
+          console.log(data);
+          _this2.imgList[number].scrollTop = data.height;
+        }).exec();
       });
     },
     // 返回聊天页面
@@ -488,9 +494,9 @@ var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumab
 /***/ }),
 
 /***/ 67:
-/*!***********************************************************************************!*\
-  !*** D:/workspace/myBar1/pages/photos/index.vue?vue&type=style&index=0&lang=css& ***!
-  \***********************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/Project/myBar1/pages/photos/index.vue?vue&type=style&index=0&lang=css& ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -504,9 +510,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 68:
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/workspace/myBar1/pages/photos/index.vue?vue&type=style&index=0&lang=css& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/Project/myBar1/pages/photos/index.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

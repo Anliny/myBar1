@@ -1,7 +1,7 @@
 <template>
 	<view class="content" :style="{backgroundImage:`url(${BGUrl})`}" >
-		<view class="appBar" :style="{height:barheight+'px'}"></view>
-		<view class="header">
+		<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
+		<view class="header" ref="refHeader">
 			<view class="logo">
 				<image :src="logo"   mode="scaleToFill"></image>
 			</view>
@@ -19,30 +19,28 @@
 			<view class="icon">Live</view>
 			<view class="text tk-acumin-pro">Current Songs</view>
 		</view>
-		<view class="empetTop"></view>
+		<view :style="{ height: 91 - iStatusBarHeight + 'px'}" class="empetTop"></view>
 		<view class="chatContanner" style="position: relative;">
 			<view class="chatView" style="">
-				<scroll-view id="scroll" ref="refScollView" :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
-				                @scroll="scroll">
-								<view id="content">
-									<view  v-for="item in chatList" :key="item.id" style="margin-bottom: 10upx;">
-										<view class="chatItem" v-if="!item.type">
-											<view class="tableNumber" v-if="item.tableNumber">{{item.tableNumber}}</view>
-											<image class="userIcon" :src="item.userIcon" mode="scaleToFill"></image>
-											<view class="text">{{item.text}}</view>
-										</view>
-										<view class="systemChatItem" v-else>
-											<view class="tableNumber" v-if="item.tableNumber">{{item.tableNumber}}</view>
-											<image class="userIcon" :src="item.userIcon" mode="scaleToFill"></image>
-											<view class="text">{{item.text}}</view>
-											<view class="goods">
-												<image class="goodsIcon" :src="item.goodsIcon" mode="scaleToFill"></image>
-												<view class="number">x {{item.goodsNumber}}</view>
-											</view>
-										</view>
-									</view>
+				<scroll-view id="scroll" ref="refScollView" :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"@scroll="scroll">
+					<view id="content">
+						<view  v-for="item in chatList" :key="item.id" style="margin-bottom: 10upx;">
+							<view class="chatItem" v-if="!item.type">
+								<view class="tableNumber" v-if="item.tableNumber">{{item.tableNumber}}</view>
+								<image class="userIcon" :src="item.userIcon" mode="scaleToFill"></image>
+								<view class="text">{{item.text}}</view>
+							</view>
+							<view class="systemChatItem" v-else>
+								<view class="tableNumber" v-if="item.tableNumber">{{item.tableNumber}}</view>
+								<image class="userIcon" :src="item.userIcon" mode="scaleToFill"></image>
+								<view class="text">{{item.text}}</view>
+								<view class="goods">
+									<image class="goodsIcon" :src="item.goodsIcon" mode="scaleToFill"></image>
+									<view class="number">x {{item.goodsNumber}}</view>
 								</view>
-					
+							</view>
+						</view>
+					</view>
 				 </scroll-view>
 			</view>
 		</view>
@@ -98,7 +96,7 @@
 		},
 		data() {
 			return {
-				barheight: this.StatusBar,
+				iStatusBarHeight: 0,
 				scrollTop:200,
 				recharge:0,
 				old: {
@@ -194,6 +192,7 @@
 				 console.log('start pulldown');
 			 }, 1000);
 			this.getClientHight()
+			this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight
 		},
 		
 		 onPullDownRefresh() {
