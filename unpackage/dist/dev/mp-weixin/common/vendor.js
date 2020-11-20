@@ -1935,7 +1935,7 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 192:
+/***/ 193:
 /*!*******************************************************!*\
   !*** D:/Project/myBar1/components/uni-icons/icons.js ***!
   \*******************************************************/
@@ -8124,17 +8124,6 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 202:
-/*!*************************************************!*\
-  !*** D:/Project/myBar1/static/images/movie.mp4 ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/static/images/movie.mp4";
-
-/***/ }),
-
 /***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -8960,6 +8949,17 @@ var userData1 = [
     isSide: true,
     total: 99 },
   null, null] }];exports.userData1 = userData1;
+
+/***/ }),
+
+/***/ 67:
+/*!*************************************************!*\
+  !*** D:/Project/myBar1/static/images/movie.mp4 ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/static/images/movie.mp4";
 
 /***/ })
 
