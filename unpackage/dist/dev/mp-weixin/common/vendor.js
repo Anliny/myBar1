@@ -1935,7 +1935,7 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 193:
+/***/ 192:
 /*!*******************************************************!*\
   !*** D:/Project/myBar1/components/uni-icons/icons.js ***!
   \*******************************************************/
@@ -8949,17 +8949,6 @@ var userData1 = [
     isSide: true,
     total: 99 },
   null, null] }];exports.userData1 = userData1;
-
-/***/ }),
-
-/***/ 67:
-/*!*************************************************!*\
-  !*** D:/Project/myBar1/static/images/movie.mp4 ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/static/images/movie.mp4";
 
 /***/ })
 

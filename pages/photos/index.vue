@@ -15,15 +15,13 @@
 			</view>
 		</view>
 		
-		<swiper :loop="false" class="imageContainer" :style="{height:`calc(100% - ${155+iStatusBarHeight}px)`}" previous-margin="45rpx" next-margin="45rpx" >
+		<swiper :loop="false" class="imageContainer" @change="changeSwipper" :style="{height:`calc(100% - ${155+iStatusBarHeight}px)`}" previous-margin="45rpx" next-margin="45rpx" >
 			<swiper-item class="swiperitem" :style="{backgroundImage:'url('+item.bgUrl+')'}" v-for="(item,index) in imgList" :key="index">
-				
 				<view class="mediaWapper" v-if="item.mediaType">
-					<video id="myVideo" 
-					src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" @error="videoErrorCallback" :autoplay="true" loop></video>
+					<video :id="`myVideo${index}`" ref="`myVideo${index}`" :show-play-btn="false" :show-loading='true'	object-fit="fill" :src="item.mediaUrl" :show-center-play-btn="false" :controls="false" @error="videoErrorCallback" :autoplay="true" loop></video>
 				</view>
 				<view class="mediaWapper" v-else>
-					<image :src="item.mediaUrl" mode="scaleToFill"></image>
+					<image :id="`myVideo${index}`" :src="item.mediaUrl" mode="scaleToFill"></image>
 				</view>
 				
 				<view class="textWapper">
@@ -108,6 +106,7 @@ export default {
 	},
 	data() {
 		return {
+			videoObj:null,
 			iStatusBarHeight: 0,
 			leftIcon:"http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/photos/left.png",
 			goodsBtnIcon:"http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/photos/goodsBtn.png",
@@ -126,7 +125,7 @@ export default {
 			isShowFillImage:false,
 			
 			current: 0,
-			index:null,
+			index:0,
 			mode: 'round',
 			BGUrl: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/bg.jpg',
 			logo: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/logo.png',
@@ -138,7 +137,7 @@ export default {
 			tips:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/tips.png',
 			imgList: [
 				{
-					mediaUrl:require('@/static/images/movie.mp4'),
+					mediaUrl:'http://lilian007.oss-cn-shanghai.aliyuncs.com/5.mp4',
 					mediaType:1, //1是视频，0是图片
 					scrollTop:0,
 					id:1,
@@ -171,7 +170,16 @@ export default {
 					inputValue:'',
 					img_type:1,
 					chatList:[]
-				}
+				},{
+					mediaUrl:'http://lilian007.oss-cn-shanghai.aliyuncs.com/5.mp4',
+					mediaType:1, //1是视频，0是图片
+					scrollTop:0,
+					id:1,
+					inputValue:'',
+					img_type:1,
+					song:{icon:'GOOD',name:'往事与如何'},
+					chatList:[]
+				},
 			],
 			bottomList:[
 				{
@@ -220,6 +228,11 @@ export default {
 	},
 	onLoad() {
 		this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight
+		// this.videoObj = "#video0"
+		// let videoContext = uni.createVideoContext(this.videoObj, this)
+		// console.log(videoContext)
+		// videoContext.play()
+		
 		var imagelist=this.imgList;
 		var photo_video=uni.getStorageSync('photo_video');
 		console.log(photo_video+'========');
@@ -352,6 +365,27 @@ export default {
 		// 返回聊天页面
 		handleGoBack(){
 			uni.navigateTo({url:'../index/index'});
+		},
+		
+		// 滑动Swipper
+		changeSwipper(event){
+			console.log(event)
+			// let index  = event.detail.current
+			// //停止播放上一次的视频
+			// let videoContextOld = uni.createVideoContext(this.videoObj, this)
+			// videoContextOld.pause()
+			// this.imgList.forEach(item => {
+			// 	// mediaType == 1 表示上传的视频
+			// 	if(item.mediaType == 1){
+			// 		console.log(item)
+			// 		// 如果为视频才赋值
+			// 		this.videoObj = '#video'+index
+			// 		// 播放本次视频
+			// 		let videoContextNew = uni.createVideoContext('#video'+index, this)
+			// 		console.log(videoContextNew)
+			// 		videoContextNew.play()
+			// 	}
+			// })
 		}
 	}
 }

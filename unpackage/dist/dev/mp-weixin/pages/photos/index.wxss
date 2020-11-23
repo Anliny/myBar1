@@ -358,6 +358,40 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*每个页面公共css */
 page{
 		 height: 100%
@@ -438,6 +472,7 @@ page{
 		position: absolute;
 		top: 60rpx;
 		left: 20rpx;
+		z-index: 10;
 }
 .textWapper image{
 		width: 100%;
@@ -488,12 +523,14 @@ page{
 		overflow-y:auto;
 		position: absolute;
 		width: 620rpx;
+		z-index: 10;
 }
 .chatContanner .chatView{
 		/* width: 100%; */
 		/* height: calc(100% - 244upx); */
 		position: absolute;
 		bottom: 0;
+		z-index: 10;
 }
 .scroll-Y{
 		max-height: 560rpx;

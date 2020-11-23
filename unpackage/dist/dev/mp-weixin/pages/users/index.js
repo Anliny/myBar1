@@ -94,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   uniSwiperDot: function() {
-    return __webpack_require__.e(/*! import() | components/uni-swiper-dot/uni-swiper-dot */ "components/uni-swiper-dot/uni-swiper-dot").then(__webpack_require__.bind(null, /*! @/components/uni-swiper-dot/uni-swiper-dot.vue */ 132))
+    return __webpack_require__.e(/*! import() | components/uni-swiper-dot/uni-swiper-dot */ "components/uni-swiper-dot/uni-swiper-dot").then(__webpack_require__.bind(null, /*! @/components/uni-swiper-dot/uni-swiper-dot.vue */ 131))
   }
 }
 var render = function() {
@@ -186,7 +186,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _mock = __webpack_require__(/*! ./mock.js */ 41);var uniSwiperDot = function uniSwiperDot() {__webpack_require__.e(/*! require.ensure | components/uni-swiper-dot/uni-swiper-dot */ "components/uni-swiper-dot/uni-swiper-dot").then((function () {return resolve(__webpack_require__(/*! @/components/uni-swiper-dot/uni-swiper-dot.vue */ 132));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _mock = __webpack_require__(/*! ./mock.js */ 41);var uniSwiperDot = function uniSwiperDot() {__webpack_require__.e(/*! require.ensure | components/uni-swiper-dot/uni-swiper-dot */ "components/uni-swiper-dot/uni-swiper-dot").then((function () {return resolve(__webpack_require__(/*! @/components/uni-swiper-dot/uni-swiper-dot.vue */ 131));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   components: { uniSwiperDot: uniSwiperDot },
   data: function data() {

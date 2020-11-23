@@ -6,25 +6,28 @@
   "setting": {
     "urlCheck": false,
     "es6": true,
-    "postcss": false
+    "postcss": false,
+    "minified": true
   },
   "compileType": "miniprogram",
   "libVersion": "",
-  "appid": "touristappid",
+  "appid": "wx0e2a3d3a0ec676ae",
   "projectname": "酒吧",
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
+      "current": -1,
       "list": []
     },
     "conversation": {
+      "current": -1,
       "list": []
     },
     "game": {
+      "current": -1,
       "list": []
     },
     "miniprogram": {
+      "current": 0,
       "list": [
         {
           "name": "photos",

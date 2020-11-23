@@ -9,7 +9,7 @@
 			{{buttonNumber}}
 		</cover-view>
 		 <cover-view class="down">
-			 <image  :src="downIcon" mode="scaleToFill"></image>
+			 <cover-image  :src="downIcon" mode="scaleToFill"></cover-image>
 		 </cover-view>
 		
 		<camera   class="hycamera-camera" :device-position="back" bindstop="" flash="auto"></camera>
