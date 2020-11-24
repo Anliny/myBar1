@@ -117,6 +117,7 @@
 		position: absolute;
 		width: 620rpx;
 		z-index: 10;
+		bottom: 204rpx;
 	}
 	.chatContanner .chatView{
 		/* width: 100%; */
@@ -397,8 +398,9 @@
 	
 	.mediaWapper{
 		position: absolute;
-		width: 100%;
+		width: calc(100% - 20rpx);
 		height: 100%;
+		background-color:red;
 		z-index: -1;
 	}
 	.mediaWapper video,.mediaWapper image{

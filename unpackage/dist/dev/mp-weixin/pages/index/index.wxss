@@ -416,7 +416,7 @@
 .chatContanner{
 		padding: 20rpx;
 		box-sizing: border-box;
-		height: calc(100% - 386rpx);
+		height: calc(100% - 395rpx);
 		padding-top:244rpx;
 		overflow-y:auto;
 }
@@ -550,8 +550,8 @@
 		position: absolute;
 		bottom: 0;
 		height: 204rpx;
-		    background-color: #0d0a0f;
-		padding: 56rpx 40px;
+		background-color: #0d0a0f;
+		padding: 56rpx 40rpx;
 		width: 100%;
 		box-sizing: border-box;
 }

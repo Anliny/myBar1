@@ -79,7 +79,7 @@
 	.chatContanner{
 		padding: 20upx;
 		box-sizing: border-box;
-		height: calc(100% - 386upx);
+		height: calc(100% - 395upx);
 		padding-top:244upx;
 		overflow-y:auto;
 	}
@@ -207,8 +207,8 @@
 		position: absolute;
 		bottom: 0;
 		height: 204upx;
-		    background-color: #0d0a0f;
-		padding: 56upx 40px;
+		background-color: #0d0a0f;
+		padding: 56upx 40rpx;
 		width: 100%;
 		box-sizing: border-box;
 	}

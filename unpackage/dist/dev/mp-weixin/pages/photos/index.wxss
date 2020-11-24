@@ -392,6 +392,13 @@
 
 
 
+
+
+
+
+
+
+
 /*每个页面公共css */
 page{
 		 height: 100%
@@ -524,6 +531,7 @@ page{
 		position: absolute;
 		width: 620rpx;
 		z-index: 10;
+		bottom: 204rpx;
 }
 .chatContanner .chatView{
 		/* width: 100%; */
@@ -823,8 +831,9 @@ page{
 }
 .mediaWapper{
 		position: absolute;
-		width: 100%;
+		width: calc(100% - 20rpx);
 		height: 100%;
+		background-color:red;
 		z-index: -1;
 }
 .mediaWapper video,.mediaWapper image{
@@ -858,7 +867,7 @@ page{
 	        align-items: center;
 	background-size: 630rpx auto;
 	background-repeat: no-repeat;
-	padding-right: 40rpx;
-	 box-sizing: border-box;
+	padding: 0 10rpx;
+	box-sizing: border-box;
 }
 

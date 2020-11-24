@@ -20,7 +20,7 @@
 			<view class="text tk-acumin-pro">Current Songs</view>
 		</view>
 		<view :style="{ height: 91 - iStatusBarHeight + 'px'}" class="empetTop"></view>
-		<view class="chatContanner" style="position: relative;">
+		<view class="chatContanner" style="position: relative;" >
 			<view class="chatView" style="">
 				<scroll-view id="scroll" ref="refScollView" :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"@scroll="scroll">
 					<view id="content">

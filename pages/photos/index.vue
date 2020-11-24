@@ -15,52 +15,59 @@
 			</view>
 		</view>
 		
-		<swiper :loop="false" class="imageContainer" @change="changeSwipper" :style="{height:`calc(100% - ${155+iStatusBarHeight}px)`}" previous-margin="45rpx" next-margin="45rpx" >
+		<swiper :loop="false" class="imageContainer" @change="changeSwipper" :style="{height:`calc(100% - ${145+iStatusBarHeight}px)`}" previous-margin="45rpx" next-margin="45rpx" >
 			<swiper-item class="swiperitem" :style="{backgroundImage:'url('+item.bgUrl+')'}" v-for="(item,index) in imgList" :key="index">
-				<view class="mediaWapper" v-if="item.mediaType">
-					<video :id="`myVideo${index}`" ref="`myVideo${index}`" :show-play-btn="false" :show-loading='true'	object-fit="fill" :src="item.mediaUrl" :show-center-play-btn="false" :controls="false" @error="videoErrorCallback" :autoplay="true" loop></video>
-				</view>
-				<view class="mediaWapper" v-else>
-					<image :id="`myVideo${index}`" :src="item.mediaUrl" mode="scaleToFill"></image>
-				</view>
-				
-				<view class="textWapper">
-					<view class="icon">{{item.song.icon}}</view>
-					<view class="text tk-acumin-pro">{{item.song.name}}</view>
-				</view>
-				<view class="chatContanner">
-					<view class="chatView" style="">
-						<scroll-view ref="refScollView" :scroll-top="item.scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
-						                @scroll="scroll">
-								<view :id="`content${index}`">
-									<view  v-for="chat in item.chatList" :key="chat.id" style="margin-bottom: 10upx;">
-										<view class="chatItem" v-if="!chat.type">
-											<view class="tableNumber" v-if="chat.tableNumber">{{chat.tableNumber}}</view>
-											<image class="userIcon" :src="chat.userIcon" mode="scaleToFill"></image>
-											<view class="text">{{chat.text}}</view>
-										</view>
-										<view class="systemChatItem" v-else>
-											<view class="tableNumber" v-if="chat.tableNumber">{{chat.tableNumber}}</view>
-											<image class="userIcon" :src="chat.userIcon" mode="scaleToFill"></image>
-											<view class="text">{{chat.text}}</view>
-											<view class="goods">
-												<image class="goodsIcon" :src="chat.goodsIcon" mode="scaleToFill"></image>
-												<view class="number">x {{chat.goodsNumber}}</view>
+				<view class="" style="width: 100%;height: 100%;">
+					<view class="mediaWapper" v-if="item.mediaType">
+						<video :id="`myVideo${index}`"  
+							preload="true"
+							webkit-playsinline="true"
+							x5-video-player-type="h5"
+							x5-video-orientation="portraint" ref="`myVideo${index}`" :show-play-btn="false" :show-loading='true'	object-fit="fill" :src="item.mediaUrl" :show-center-play-btn="false" :controls="false" @error="videoErrorCallback" :autoplay="true" loop></video>
+					</view>
+					<view class="mediaWapper" v-else>
+						<image :id="`myVideo${index}`" :src="item.mediaUrl" mode="scaleToFill"></image>
+					</view>
+					
+					<cover-view class="textWapper">
+						<cover-view class="icon">{{item.song.icon}}</cover-view>
+						<cover-view class="text tk-acumin-pro">{{item.song.name}}</cover-view>
+					</cover-view>
+					<view class="chatContanner">
+						<view class="chatView" style="">
+							<scroll-view ref="refScollView" :scroll-top="item.scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
+							                @scroll="scroll">
+									<view :id="`content${index}`">
+										<view  v-for="chat in item.chatList" :key="chat.id" style="margin-bottom: 10upx;">
+											<view class="chatItem" v-if="!chat.type">
+												<view class="tableNumber" v-if="chat.tableNumber">{{chat.tableNumber}}</view>
+												<image class="userIcon" :src="chat.userIcon" mode="scaleToFill"></image>
+												<view class="text">{{chat.text}}</view>
+											</view>
+											<view class="systemChatItem" v-else>
+												<view class="tableNumber" v-if="chat.tableNumber">{{chat.tableNumber}}</view>
+												<image class="userIcon" :src="chat.userIcon" mode="scaleToFill"></image>
+												<view class="text">{{chat.text}}</view>
+												<view class="goods">
+													<image class="goodsIcon" :src="chat.goodsIcon" mode="scaleToFill"></image>
+													<view class="number">x {{chat.goodsNumber}}</view>
+												</view>
 											</view>
 										</view>
 									</view>
-								</view>
-						 </scroll-view>
+							 </scroll-view>
+						</view>
+					</view>
+					<view class="bottomWapper">
+						<view class="line"></view>
+						<view class="chatWapper">
+							<input type="text" class="chatInput" @focus="getIndex(index)" @blur="getChat" :value="item.inputValue" />
+							<view class="submit" @click="handleSubmit(index)">发送</view>
+							<image class="gave" :src="goodsBtnIcon" @click="handleGoods(index)" mode="scaleToFill"></image>
+						</view>
 					</view>
 				</view>
-				<view class="bottomWapper">
-					<view class="line"></view>
-					<view class="chatWapper">
-						<input type="text" class="chatInput" @focus="getIndex(index)" @blur="getChat" :value="item.inputValue" />
-						<view class="submit" @click="handleSubmit(index)">发送</view>
-						<image class="gave" :src="goodsBtnIcon" @click="handleGoods(index)" mode="scaleToFill"></image>
-					</view>
-				</view>
+				
 			</swiper-item>
 		</swiper>
 		<n-transition ref="pop" speed="ease-in-out" :height="500" :maskVal="0.5">
@@ -418,7 +425,7 @@ export default {
 		align-items: center;
 		background-size: 630rpx auto;
 		background-repeat: no-repeat;
-		padding-right: 40rpx;
-		 box-sizing: border-box;
+		padding: 0 10rpx;
+		box-sizing: border-box;
 	}
 </style>
