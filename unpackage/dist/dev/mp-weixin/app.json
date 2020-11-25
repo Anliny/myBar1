@@ -22,5 +22,6 @@
     "backgroundColor": "#F8F8F8",
     "navigationStyle": "custom"
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap99.json"
 }

@@ -28,7 +28,7 @@
 					<image 
 						v-for="(user,index) in table.users" 
 						:key="user.id" 
-						:style="{transform: `rotateZ(${(360/table.users.length)*index}deg) translateY(150rpx)`}"
+						:style="{transform: `rotateZ(${(360/table.users.length)*index}deg) translateY(150rpx) rotateZ(${-(360/table.users.length)*index}deg)`}"
 						:class="{shadow:user.isShadow,zIndex:user.isShadow}" 
 						class="user" 
 						:src="user.userUrl" 
