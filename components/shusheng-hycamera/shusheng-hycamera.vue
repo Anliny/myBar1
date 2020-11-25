@@ -155,7 +155,7 @@
 		bottom: 50px;
 		left: 50%;
 		margin-left: -50px;
-		border: 8px solid rgba(66, 19, 53, 0.56);
+		border:12px solid rgba(66, 19, 53, 0.56);
 		border-radius: 50px;
 		transition: all 0.2s linear;
 		text-align: center;

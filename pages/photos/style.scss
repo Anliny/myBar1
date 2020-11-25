@@ -281,14 +281,13 @@
 		border-radius: 74upx;
 		line-height: 74upx;
 		color: #fff;
-		
 	}
 	.bottomWapper .chatWapper .gave{
+		margin-right: 10upx;
 		width: 74upx;
 		height: 74upx;
 		border-radius: 50%;
 		float: right;
-		margin-right: 10upx;
 		background-color: #674892;
 	}
 	
@@ -340,6 +339,11 @@
 		width: 156upx;
 		text-align: center;
 	}
+	.maskWapper .goodsWapper .price .gem{
+		width: 15rpx;
+		height: 20rpx;
+		margin-right: 10rpx;
+	}
 	.payment{
 		display: flex;
 		flex-direction: row;
@@ -357,6 +361,11 @@
 		text-align: right;
 		box-sizing: border-box;
 		color: #fff;
+	}
+	.payment .recharge .gem{
+		width: 15rpx;
+		height: 20rpx;
+		margin-right: 10rpx;
 	}
 	.payment .recharge image{
 		width: 62rpx;

@@ -63,14 +63,15 @@
 	.textWapper image{width: 100%;height: 100%;}
 	.textWapper .icon{
 		height: 20px;
-		color: rgb(74,154,126);
-		display: inline-block;
-		padding:0 20rpx;
-		text-align: center;
-		line-height: 20px;
-		background-color: #5555ff;
-		transform: skewX(-25deg);
-		font-family: Acumin Variable Concept;
+		    color: #2d8081;
+		    display: inline-block;
+		    padding: 0 10px;
+		    font-weight: bold;
+		    text-align: center;
+		    line-height: 20px;
+		    background-color: #17347a;
+		    transform: skewX(-25deg);
+		    font-family: Acumin Variable Concept;
 	}
 	.textWapper .text{
 		font-size: 30px;
@@ -79,7 +80,7 @@
 	.chatContanner{
 		padding: 20upx;
 		box-sizing: border-box;
-		height: calc(100% - 395upx);
+		height: calc(100% - 315upx);
 		padding-top:244upx;
 		overflow-y:auto;
 	}
@@ -111,7 +112,7 @@
 		background-color: rgba(73,14,56,0.78);
 		display: inline-block;
 		padding: 0 10upx;
-		font-size: 28upx;
+		font-size: 34upx;
 		font-weight: bolder;
 		line-height: 67.33upx;
 		color: #bf72ac;
@@ -124,7 +125,7 @@
 	}
 	.chatContanner .chatItem .text{
 		font-size: 28upx;
-		font-weight: bolder;
+		/* font-weight: bolder; */
 		color: #FFFFFF;
 		min-height: 30rpx;
 		line-height: 40rpx;
@@ -152,7 +153,7 @@
 		background-color: rgba(73,14,56,0.78);
 		display: inline-block;
 		padding: 0 10upx;
-		font-size: 28upx;
+		font-size: 34upx;
 		font-weight: bolder;
 		line-height: 67.33upx;
 		color: #bf72ac;
@@ -179,12 +180,12 @@
 		position: relative;
 	}
 	.chatContanner .systemChatItem .goods .goodsIcon{
-		width: 68rpx;
-		    height: 169rpx;
+		    width: 43rpx;
+		    height: 140rpx;
 		    position: absolute;
-		    bottom: -12px;
+		    bottom: -17px;
 		    left: 5px;
-			transform: rotate(10deg);
+		    transform: rotate(15deg) translate(10px);
 	}
 	.chatContanner .systemChatItem .goods .number{
 		position: absolute;
@@ -201,16 +202,15 @@
 		height: 182upx;
 	}
 	.empetBottom{
-		height:204upx;
+		height:125upx;
 	}
 	.bottomWapper{
-		position: absolute;
-		bottom: 0;
-		height: 204upx;
-		background-color: #0d0a0f;
-		padding: 56upx 40rpx;
-		width: 100%;
-		box-sizing: border-box;
+		    position: absolute;
+		    bottom: 0;
+		    height: 120rpx;
+		    padding: 20rpx 20rpx;
+		    width: 100%;
+		    box-sizing: border-box;
 	}
 	.bottomWapper .line{
 		width:calc(100% - 40upx);
@@ -221,14 +221,12 @@
 		top: 0;
 	}
 	.bottomWapper .chatWapper{
-		height: 74upx;
-		width: 650upx;
-		position: absolute;
-		left: 0;
-		right: 0;
-		margin: auto;
-		/* background-color: #00ffff; */
-		/* display: flex; */
+		    height: 74rpx;
+		    width: calc(100% - 40rpx);
+		    position: absolute;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
 	}
 	.bottomWapper .chatWapper .chatInput{
 		width: 400upx;
@@ -250,14 +248,13 @@
 		border-radius: 74upx;
 		line-height: 74upx;
 		color: #fff;
-		
+		margin-right: 10upx;
 	}
 	.bottomWapper .chatWapper .gave{
 		width: 74upx;
 		height: 74upx;
 		border-radius: 50%;
 		float: right;
-		margin-right: 10upx;
 		background-color: #674892;
 	}
 	
@@ -309,6 +306,11 @@
 		width: 156upx;
 		text-align: center;
 	}
+	.maskWapper .goodsWapper .price .gem{
+		width: 15rpx;
+		height: 20rpx;
+		margin-right: 10rpx;
+	}
 	.payment{
 		display: flex;
 		flex-direction: row;
@@ -326,6 +328,11 @@
 		text-align: right;
 		box-sizing: border-box;
 		color: #fff;
+	}
+	.payment .recharge .gem{
+		width: 15rpx;
+		height: 20rpx;
+		margin-right: 10rpx;
 	}
 	.payment .recharge image{
 		width: 62rpx;

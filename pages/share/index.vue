@@ -1,5 +1,6 @@
 <template>
 	<view class="content" :style="{background:`url(${BGUrl})`}" style="background-size: 750upx;">
+		<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
 		<view class="header">
 			<view class="goBack" @click="goBack">
 				<image class="icon" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/share/left.png" mode="scaleToFill"></image>
@@ -10,28 +11,28 @@
 				<image class="avatar" :src="avatarList[1]" mode="scaleToFill"></image>
 			</view>
 		</view>
-		
-		
-		
-		<swiper :loop="false" class="imageContainer" previous-margin="45rpx" next-margin="45rpx" >
-			<swiper-item class="swiperitem" :style="{backgroundImage:'url('+item+')'}" v-for="(item,index) in imgList" :key="index">
-				<view class="textWapper">
-					<view class="icon">Live</view>
-					<view class="text tk-acumin-pro">Current Songs</view>
+	
+		<swiper :loop="false" class="imageContainer" :style="{height:`calc(100% - ${iStatusBarHeight*2+240}rpx)`}" previous-margin="0rpx" next-margin="45rpx" >
+			<swiper-item class="swiperitem"  v-for="(item,index) in imgList" :key="index">
+				<view class="itemWapper" :style="{backgroundImage:'url('+item+')'}">
+					<view class="textWapper">
+						<view class="icon">Live</view>
+						<view class="text tk-acumin-pro">Current Songs</view>
+					</view>
+					<view class="shareBtn" v-if="isactive==0">
+						<view class="icon" @tap="YQsubmit" :data-id="0">邀请一起喝</view>
+					</view>
+					<view class="shareBtn1" v-else-if="isactive==1">
+						<view class="icon"  @tap="YQsubmit" :data-id="1" >等他回应</view>
+					</view>
+					<view class="shareBtn2"  v-else-if="isactive==2">
+						<view class="icon" @tap="YQsubmit" :data-id="2" >她接过酒杯</view>
+					</view>
+					<view class="shareBtn2"  v-else-if="isactive==3" >
+						<view class="icon" @tap="YQsubmit" :data-id="3" >已将微信发送给你</view>
+					</view>
+					<image class="gift" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/share/gift.png" mode="scaleToFill"></image>	
 				</view>
-				<view class="shareBtn" v-if="isactive==0">
-					<view class="icon" @tap="YQsubmit" :data-id="0">邀请一起喝</view>
-				</view>
-				<view class="shareBtn1" v-else-if="isactive==1">
-					<view class="icon"  @tap="YQsubmit" :data-id="1" >等他回应</view>
-				</view>
-				<view class="shareBtn2"  v-else-if="isactive==2">
-					<view class="icon" @tap="YQsubmit" :data-id="2" >她接过酒杯</view>
-				</view>
-				<view class="shareBtn2"  v-else-if="isactive==3" >
-					<view class="icon" @tap="YQsubmit" :data-id="3" >已将微信发送给你</view>
-				</view>
-				<image class="gift" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/share/gift.png" mode="scaleToFill"></image>
 			</swiper-item>
 		</swiper>
 	</view>
@@ -45,6 +46,7 @@
 		components: {},
 		data() {
 			return {
+				iStatusBarHeight: 0,
 				isactive:0,
 				scrollTop:0,
 				recharge:0,
@@ -84,7 +86,9 @@
 				]
 			}
 		},
-		onLoad() {},
+		onLoad() {
+			this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight
+		},
 		methods: {
 			goBack(){
 				uni.navigateTo({url:'../photos/index'});
@@ -149,7 +153,7 @@
 	.imageContainer {
 		width: 750rpx;
 		margin-top: 10rpx;
-		height: calc(100% - 200rpx);
+		height: calc(100% - 280rpx);
 		
 	}
 	
@@ -167,7 +171,12 @@
 		align-items: center;
 		background-size: 630rpx 100%;
 		background-repeat: no-repeat;
-		padding-right: 40rpx;
+		padding-right: 20rpx;
 		 box-sizing: border-box;
+	}
+	.itemWapper{
+		width: 100%;
+		height: 100%;
+		background-size: 100% auto;
 	}
 </style>

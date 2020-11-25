@@ -21,6 +21,9 @@
 		<view class="bottles">
 			<image :src="bottles" mode="scaleToFill"></image> 
 		</view>
+		
+		
+		
 		<view class="table">
 			<view class="tableLeft">
 				<view class="tableItem" v-for="(table,index) in tableList.tableLeft" :key= "table.id">
@@ -28,7 +31,7 @@
 					<image 
 						v-for="(user,index) in table.users" 
 						:key="user.id" 
-						:style="{transform: `rotateZ(${(360/table.users.length)*index}deg) translateY(150rpx) rotateZ(${-(360/table.users.length)*index}deg)`}"
+						:style="{transform: `rotateZ(${(360/table.users.length)*index}deg) translateY(130rpx) rotateZ(${-(360/table.users.length)*index}deg)`}"
 						:class="{shadow:user.isShadow,zIndex:user.isShadow}" 
 						class="user" 
 						:src="user.userUrl" 
