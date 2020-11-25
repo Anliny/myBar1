@@ -21,6 +21,9 @@
 		<view class="bottles">
 			<image :src="bottles" mode="scaleToFill"></image> 
 		</view>
+		
+		
+		
 		<view class="table">
 			<view class="tableLeft">
 				<view class="tableItem" v-for="(table,index) in tableList.tableLeft" :key= "table.id">
