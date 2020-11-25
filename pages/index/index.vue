@@ -24,7 +24,7 @@
 			<view class="chatView" style="">
 				<scroll-view id="scroll" ref="refScollView" :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"@scroll="scroll">
 					<view id="content">
-						<view  v-for="item in chatList" :key="item.id" style="margin-bottom: 10upx;">
+						<view  v-for="item in chatList" :key="item.id" style="margin-bottom: 10upx;padding: 5rpx 0;">
 							<view class="chatItem" v-if="!item.type">
 								<view class="tableNumber" v-if="item.tableNumber">{{item.tableNumber}}</view>
 								<image class="userIcon" :src="item.userIcon" mode="scaleToFill"></image>
@@ -49,8 +49,8 @@
 			<view class="line"></view>
 			<view class="chatWapper">
 				<input adjust-position type="text" class="chatInput" @focus="handleFocus" @blur="getChat" :value="inputValue" />
-				<view class="submit" @click="handleSubmit">发送</view>
 				<image class="gave" :src="'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/goodsBtn.png'"  @click="handleGoods" mode="scaleToFill"></image>
+				<view class="submit" @click="handleSubmit">发送</view>
 			</view>
 		</view>
 		
@@ -64,13 +64,17 @@
 									<image :src="item.icon" mode="scaleToFill"></image>
 								</view>
 								<view class="name">{{item.name}}</view>
-								<view class="price">{{item.price}}</view>
+								<view class="price">
+									<image class="gem" src="../../static/images/gem.png"></image>
+									{{item.price}}
+								</view>
 							</view>
 						</view>
 					</scroll-view>
 					
 				<view class="payment">
 					<view class="recharge">
+						<image class="gem" src="../../static/images/gem.png"></image>
 						{{recharge}}   充值＞
 					</view>
 					<view class="btnGroup" >

@@ -81,7 +81,10 @@
 									<image :src="item.icon" mode="scaleToFill"></image>
 								</view>
 								<view class="name">{{item.name}}</view>
-								<view class="price">{{item.price}}</view>
+								<view class="price">
+									<image class="gem" src="../../static/images/gem.png"></image>
+									{{item.price}}
+								</view>
 							</view>
 						</view>
 					
@@ -89,6 +92,7 @@
 				
 				<view class="payment">
 					<view class="recharge">
+						<image class="gem" src="../../static/images/gem.png"></image>
 						{{recharge}}   充值＞
 					</view>
 					<view class="btnGroup" >

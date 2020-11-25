@@ -399,6 +399,10 @@
 
 
 
+
+
+
+
 /*每个页面公共css */
 page{
 		 height: 100%
@@ -702,11 +706,11 @@ page{
 		color: #fff;
 }
 .bottomWapper .chatWapper .gave{
+		margin-right: 10rpx;
 		width: 74rpx;
 		height: 74rpx;
 		border-radius: 50%;
 		float: right;
-		margin-right: 10rpx;
 		background-color: #674892;
 }
 .maskWapper{
@@ -764,6 +768,11 @@ page{
 		width: 156rpx;
 		text-align: center;
 }
+.maskWapper .goodsWapper .price .gem{
+		width: 15rpx;
+		height: 20rpx;
+		margin-right: 10rpx;
+}
 .payment{
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -788,6 +797,11 @@ page{
 		text-align: right;
 		box-sizing: border-box;
 		color: #fff;
+}
+.payment .recharge .gem{
+		width: 15rpx;
+		height: 20rpx;
+		margin-right: 10rpx;
 }
 .payment .recharge image{
 		width: 62rpx;

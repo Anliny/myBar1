@@ -5,7 +5,7 @@ page,.content{
 	background-color: rgba(0,0,0,.3);
 	height: 440rpx;
 	margin-top: 90rpx;
-	border-radius:0 0 100rpx 100rpx;
+	border-radius:80rpx;
 }
 .swiper-item{
 	display: flex;
@@ -74,8 +74,8 @@ page,.content{
 }
 .table .tableLeft .tableItem .tableBg{
 	position: absolute;
-	width: 318rpx;
-	height: 318rpx;
+	width: 300rpx;
+	height: 300rpx;
 	top: 0;
 	left: 0;
 	bottom: 0;
@@ -104,7 +104,7 @@ page,.content{
 	position: absolute;
 	font-size: 44upx;
 	text-align: center;
-	bottom: 10upx;
+	bottom: -5upx;
 	font-weight: bold;
 	width: 100%;
 	color: #BF72AC;
@@ -118,13 +118,16 @@ page,.content{
 .table .tableRight::-webkit-scrollbar,.table .tableLeft::-webkit-scrollbar {
 	display: none;
 }
-
+.table .tableRight .tableItem:first-child{
+	margin-top: 0rpx;
+}
 .table .tableRight .tableItem{
 	width: 250upx;
 	height: 250upx;
 	background-color: rgba(56,13,134,.3);
 	border-radius: 100upx;
 	margin: auto;
+	margin-top: -60rpx;
 	margin-bottom: 10upx;
 	position: relative;
 }

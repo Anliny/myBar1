@@ -330,6 +330,10 @@
 
 
 
+
+
+
+
 /*每个页面公共css */
 .content {
 		height: 100%;
@@ -399,15 +403,16 @@
 .textWapper image{width: 100%;height: 100%;}
 .textWapper .icon{
 		height: 20px;
-		color: rgb(74,154,126);
-		display: inline-block;
-		padding:0 20rpx;
-		text-align: center;
-		line-height: 20px;
-		background-color: #5555ff;
-		-webkit-transform: skewX(-25deg);
-		        transform: skewX(-25deg);
-		font-family: Acumin Variable Concept;
+		    color: #2d8081;
+		    display: inline-block;
+		    padding: 0 10px;
+		    font-weight: bold;
+		    text-align: center;
+		    line-height: 20px;
+		    background-color: #17347a;
+		    -webkit-transform: skewX(-25deg);
+		            transform: skewX(-25deg);
+		    font-family: Acumin Variable Concept;
 }
 .textWapper .text{
 		font-size: 30px;
@@ -416,7 +421,7 @@
 .chatContanner{
 		padding: 20rpx;
 		box-sizing: border-box;
-		height: calc(100% - 395rpx);
+		height: calc(100% - 315rpx);
 		padding-top:244rpx;
 		overflow-y:auto;
 }
@@ -451,7 +456,7 @@
 		background-color: rgba(73,14,56,0.78);
 		display: inline-block;
 		padding: 0 10rpx;
-		font-size: 28rpx;
+		font-size: 34rpx;
 		font-weight: bolder;
 		line-height: 67.33rpx;
 		color: #bf72ac;
@@ -464,7 +469,7 @@
 }
 .chatContanner .chatItem .text{
 		font-size: 28rpx;
-		font-weight: bolder;
+		/* font-weight: bolder; */
 		color: #FFFFFF;
 		min-height: 30rpx;
 		line-height: 40rpx;
@@ -496,7 +501,7 @@
 		background-color: rgba(73,14,56,0.78);
 		display: inline-block;
 		padding: 0 10rpx;
-		font-size: 28rpx;
+		font-size: 34rpx;
 		font-weight: bolder;
 		line-height: 67.33rpx;
 		color: #bf72ac;
@@ -523,13 +528,13 @@
 		position: relative;
 }
 .chatContanner .systemChatItem .goods .goodsIcon{
-		width: 68rpx;
-		    height: 169rpx;
+		    width: 43rpx;
+		    height: 140rpx;
 		    position: absolute;
-		    bottom: -12px;
+		    bottom: -17px;
 		    left: 5px;
-			-webkit-transform: rotate(10deg);
-			        transform: rotate(10deg);
+		    -webkit-transform: rotate(15deg) translate(10px);
+		            transform: rotate(15deg) translate(10px);
 }
 .chatContanner .systemChatItem .goods .number{
 		position: absolute;
@@ -544,16 +549,15 @@
 		height: 182rpx;
 }
 .empetBottom{
-		height:204rpx;
+		height:125rpx;
 }
 .bottomWapper{
-		position: absolute;
-		bottom: 0;
-		height: 204rpx;
-		background-color: #0d0a0f;
-		padding: 56rpx 40rpx;
-		width: 100%;
-		box-sizing: border-box;
+		    position: absolute;
+		    bottom: 0;
+		    height: 120rpx;
+		    padding: 20rpx 20rpx;
+		    width: 100%;
+		    box-sizing: border-box;
 }
 .bottomWapper .line{
 		width:calc(100% - 40rpx);
@@ -564,14 +568,12 @@
 		top: 0;
 }
 .bottomWapper .chatWapper{
-		height: 74rpx;
-		width: 650rpx;
-		position: absolute;
-		left: 0;
-		right: 0;
-		margin: auto;
-		/* background-color: #00ffff; */
-		/* display: flex; */
+		    height: 74rpx;
+		    width: calc(100% - 40rpx);
+		    position: absolute;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
 }
 .bottomWapper .chatWapper .chatInput{
 		width: 400rpx;
@@ -593,13 +595,13 @@
 		border-radius: 74rpx;
 		line-height: 74rpx;
 		color: #fff;
+		margin-right: 10rpx;
 }
 .bottomWapper .chatWapper .gave{
 		width: 74rpx;
 		height: 74rpx;
 		border-radius: 50%;
 		float: right;
-		margin-right: 10rpx;
 		background-color: #674892;
 }
 .maskWapper{
@@ -657,6 +659,11 @@
 		width: 156rpx;
 		text-align: center;
 }
+.maskWapper .goodsWapper .price .gem{
+		width: 15rpx;
+		height: 20rpx;
+		margin-right: 10rpx;
+}
 .payment{
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -681,6 +688,11 @@
 		text-align: right;
 		box-sizing: border-box;
 		color: #fff;
+}
+.payment .recharge .gem{
+		width: 15rpx;
+		height: 20rpx;
+		margin-right: 10rpx;
 }
 .payment .recharge image{
 		width: 62rpx;
