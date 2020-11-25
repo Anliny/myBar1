@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "uni-app",
-  "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark",
-  "usingComponents": {
-    "n-transition": "/components/n-transition/n-transition"
-  }
-}

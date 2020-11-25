@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "camera",
-  "usingComponents": {
-    "hycamera": "/components/shusheng-hycamera/shusheng-hycamera"
-  }
-}
