@@ -244,6 +244,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
 var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var nTransition = function nTransition() {__webpack_require__.e(/*! require.ensure | components/n-transition/n-transition */ "components/n-transition/n-transition").then((function () {return resolve(__webpack_require__(/*! @/components/n-transition/n-transition.vue */ 124));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
@@ -253,6 +261,7 @@ var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumab
 
   data: function data() {var _ref;
     return _ref = {
+      swiperCurrent: 0,
       videoObj: null,
       iStatusBarHeight: 0,
       leftIcon: "http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/photos/left.png",
@@ -329,46 +338,61 @@ var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumab
 
 
     [
+    [
     {
       id: 1,
-      icon: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol1.png',
+      icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol1.png',
       name: '四叶草',
       price: 60 },
     {
       id: 2,
-      icon: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol2.png',
+      icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol2.png',
       name: '四叶草',
       price: 123 },
     {
       id: 3,
-      icon: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol3.png',
+      icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol3.png',
       name: '四叶草',
       price: 76 },
     {
       id: 6,
-      icon: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol4.png',
+      icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol4.png',
       name: '四叶草',
       price: 79 },
     {
       id: 4,
-      icon: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol5.png',
+      icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol5.png',
       name: '四叶草',
       price: 80 },
     {
       id: 5,
-      icon: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol6.png',
+      icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol6.png',
       name: '四叶草',
       price: 123 },
     {
       id: 7,
-      icon: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol7.png',
+      icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol7.png',
       name: '四叶草',
       price: 45 },
     {
       id: 8,
-      icon: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol8.png',
+      icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol8.png',
       name: '四叶草',
-      price: 79 }]), _ref;
+      price: 79 }],
+
+
+    [
+    {
+      id: 9,
+      icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol7.png',
+      name: '四叶草',
+      price: 45 },
+    {
+      id: 10,
+      icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol8.png',
+      name: '四叶草',
+      price: 79 }]]), _ref;
+
 
 
 
@@ -533,6 +557,10 @@ var _mock = __webpack_require__(/*! ../users/mock.js */ 41);function _toConsumab
       // 		videoContextNew.play()
       // 	}
       // })
+    },
+    // 切换礼物
+    swiperChange: function swiperChange(e) {
+      this.swiperCurrent = e.detail.current;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

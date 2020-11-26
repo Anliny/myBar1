@@ -195,10 +195,12 @@ var _mock = __webpack_require__(/*! ./mock.js */ 41);var uniSwiperDot = function
   components: { uniSwiperDot: uniSwiperDot },
   data: function data() {
     return {
+      queryBoy: 0, //0  女 1  男
+      BoyText: null,
       BGUrl: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/bg.jpg',
       tabelBg: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/tableBG.png',
       bottles: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/users/bottles.png',
-      info: _mock.userData,
+      info: [],
       tableList: _mock.tableList,
       current: 0,
       mode: 'round',
@@ -207,6 +209,8 @@ var _mock = __webpack_require__(/*! ./mock.js */ 41);var uniSwiperDot = function
   },
   onLoad: function onLoad() {
     this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight;
+    this.info = _mock.userData;
+    this.BoyText = 'griles';
   },
   methods: {
     change: function change(e) {
@@ -219,24 +223,22 @@ var _mock = __webpack_require__(/*! ./mock.js */ 41);var uniSwiperDot = function
         url: '/pages/mine/index' });
 
     },
-    submitBoy: function submitBoy(e) {
-      // console.log(JSON.stringify(e));
-      // var id=e.currentTarget.dataset.id;
+    submitBoy: function submitBoy(e) {var _this = this;
+      console.log(this.queryBoy);
+      if (this.queryBoy == 0) {
+        this.BoyText = 'boy';
+        this.queryBoy = 1;
+        this.$nextTick(function () {
 
-      // this.current=0;
-      // this.info=[];
-
-      // if(id==1){
-      // 	console.log(id+'--boy----'+this.current);
-      // 	uni.redirectTo({
-      // 	  url: '/pages/users_grils/index'
-      // 	});
-
-      // 	// this.info=userData1;
-      // 	// console.log(userData1);
-      // }else{
-      // 	// this.info=userData;
-      // }
+          _this.info = _mock.userDataGriles;
+        });
+      } else {
+        this.BoyText = 'griles';
+        this.queryBoy = 0;
+        this.$nextTick(function () {
+          _this.info = _mock.userData;
+        });
+      }
     },
     subMit: function subMit(e) {
       //跳转对应的应邀页面

@@ -403,6 +403,34 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*每个页面公共css */
 page{
 		 height: 100%
@@ -575,7 +603,6 @@ page{
 		font-weight: bolder;
 		line-height: 67.33rpx;
 		color: #bf72ac;
-		/* margin-top:10rpx; */
 		font-style: oblique;
 }
 .chatContanner .chatItem .userIcon {
@@ -630,7 +657,8 @@ page{
 }
 .chatContanner .systemChatItem .text{
 		font-size: 28rpx;
-		font-weight: bolder;
+		/* font-weight: bolder;
+ */
 		color: #FFFFFF;
 		min-height: 30rpx;
 		line-height: 40rpx;
@@ -644,13 +672,13 @@ page{
 		position: relative;
 }
 .chatContanner .systemChatItem .goods .goodsIcon{
-		width: 68rpx;
-		    height: 169rpx;
-		    position: absolute;
-		    bottom: -12px;
-		    left: 5px;
-			-webkit-transform: rotate(10deg);
-			        transform: rotate(10deg);
+		width: 43rpx;
+		height: 140rpx;
+		position: absolute;
+		bottom: -17px;
+		left: 5px;
+		-webkit-transform: rotate(15deg) translate(10px);
+		        transform: rotate(15deg) translate(10px);
 }
 .chatContanner .systemChatItem .goods .number{
 		position: absolute;
@@ -705,9 +733,10 @@ page{
 		border-radius: 74rpx;
 		line-height: 74rpx;
 		color: #fff;
+		margin-right: 10rpx;
 }
 .bottomWapper .chatWapper .gave{
-		margin-right: 10rpx;
+		
 		width: 74rpx;
 		height: 74rpx;
 		border-radius: 50%;
@@ -730,9 +759,6 @@ page{
 		display: flex;
 		-webkit-flex-wrap: wrap;
 		        flex-wrap: wrap;
-		-webkit-box-pack: justify;
-		-webkit-justify-content: space-between;
-		        justify-content: space-between;
 }
 .maskWapper .goodsWapper .goodsItem{
 		-webkit-box-flex: 1;
@@ -785,7 +811,7 @@ page{
 		  -webkit-box-pack: justify;
 		  -webkit-justify-content: space-between;
 		          justify-content: space-between;
-		  margin-top: 20rpx;
+		  margin-top: 60rpx;
 }
 .payment .recharge{
 		background-color: #74747f;
@@ -884,5 +910,32 @@ page{
 	background-repeat: no-repeat;
 	padding: 0 10rpx;
 	box-sizing: border-box;
+}
+.dots-container {
+  position: absolute;
+  width: 120rpx;
+  left: 50%;
+  margin-left: -60rpx;
+  top: 530rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  background:-webkit-linear-gradient(#d6d6d6, #5d5d5d);
+  background:linear-gradient(#d6d6d6, #5d5d5d);
+  border-radius: 8rpx;
+}
+.dot {
+  margin-right: 0;
+  width: 60rpx;
+  height: 8rpx;
+  border-radius:0;
+}
+.dot.active {
+  background:-webkit-linear-gradient(left, #68248b, #cf6a8e);
+  background:linear-gradient(90deg, #68248b, #cf6a8e);
+  border-radius: 8rpx;
 }
 

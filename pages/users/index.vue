@@ -17,7 +17,7 @@
 		<view class="textWapper">
 			<view class="icon" @tap="submitBoy" data-id="1">
 				<text class="icon_text tk-acumin-pro">Live</text>
-				<text class="sex">girls</text>
+				<text class="sex">{{BoyText}}</text>
 			</view>
 			<view class="text tk-acumin-pro">Current Songs</view>
 		</view>
@@ -54,15 +54,17 @@
 
 <script>
 	import uniSwiperDot from "@/components/uni-swiper-dot/uni-swiper-dot.vue"
-     import {userData,tableList,userData1} from "./mock.js"
+     import {userData,userDataGriles,tableList,userData1} from "./mock.js"
 	export default {
 		components: {uniSwiperDot},
 		data() {
 			return {
+				queryBoy:0,//0  女 1  男
+				BoyText:null,
 				BGUrl: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/bg.jpg',
 				tabelBg: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/tableBG.png',
 				bottles:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/users/bottles.png',
-				info: userData,
+				info: [],
 				tableList:tableList,
 				current: 0,
 				mode: 'round',
@@ -71,6 +73,8 @@
 		},
 		onLoad() {
 			this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight
+			this.info = userData
+			this.BoyText = 'griles'
 		},
 		methods: {
 			change(e) {
@@ -84,23 +88,21 @@
 				});
 			},
 			submitBoy(e){
-				// console.log(JSON.stringify(e));
-				// var id=e.currentTarget.dataset.id;
-				
-				// this.current=0;
-				// this.info=[];
-				
-				// if(id==1){
-				// 	console.log(id+'--boy----'+this.current);
-				// 	uni.redirectTo({
-				// 	  url: '/pages/users_grils/index'
-				// 	});
-				
-				// 	// this.info=userData1;
-				// 	// console.log(userData1);
-				// }else{
-				// 	// this.info=userData;
-				// }
+				console.log(this.queryBoy)
+				if(this.queryBoy == 0){
+					this.BoyText = 'boy'
+					this.queryBoy = 1
+					this.$nextTick(() =>　{
+						
+					this.info = userDataGriles
+					})
+				} else {
+					this.BoyText = 'griles'
+					this.queryBoy = 0
+					this.$nextTick(() =>　{
+					this.info = userData
+					})
+				}
 			},
 			subMit(e){
 				//跳转对应的应邀页面

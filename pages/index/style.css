@@ -116,7 +116,6 @@
 		font-weight: bolder;
 		line-height: 67.33upx;
 		color: #bf72ac;
-		/* margin-top:10rpx; */
 		font-style: oblique;
 	}
 	.chatContanner .chatItem .userIcon {
@@ -166,7 +165,6 @@
 	}
 	.chatContanner .systemChatItem .text{
 		font-size: 28upx;
-		font-weight: bolder;
 		color: #FFFFFF;
 		min-height: 30rpx;
 		line-height: 40rpx;

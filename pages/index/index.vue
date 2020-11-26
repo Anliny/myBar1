@@ -56,30 +56,30 @@
 		
 		<n-transition ref="pop" speed="ease-in-out" :height="500" :maskVal="0.5">
 			<view class="maskWapper">
-					<view class="page-section swiper">
-						<view class="goodsWapper">
-							<swiper class="swiper" @change="swiperChange" style="width: 100%; height: 100%;" :indicator-dots="false" :autoplay="false" :duration="300">
-								<swiper-item class="goodsWapper" v-for="(row,index) in bottomList" :key="index">
-									<view class="goodsItem" @click="handleGoodsItem(item)" v-for="item in row" :key="item.id">
-										<view class="icon" :class="[item.id == goodsItemActive ? 'iconHover' : '']">
-											<image :src="item.icon" mode="scaleToFill"></image>
-										</view>
-										<view class="name">{{item.name}}</view>
-										<view class="price">
-											<image class="gem" src="../../static/images/gem.png"></image>
-											{{item.price}}
-										</view>
+				<view class="page-section swiper">
+					<view class="goodsWapper">
+						<swiper class="swiper" @change="swiperChange" style="width: 100%; height: 100%;" :indicator-dots="false" :autoplay="false" :duration="300">
+							<swiper-item class="goodsWapper" v-for="(row,index) in bottomList" :key="index">
+								<view class="goodsItem" @click="handleGoodsItem(item)" v-for="item in row" :key="item.id">
+									<view class="icon" :class="[item.id == goodsItemActive ? 'iconHover' : '']">
+										<image :src="item.icon" mode="scaleToFill"></image>
 									</view>
-								</swiper-item>
-							</swiper>
-							
-							<div class="dots-container">
-							  <div v-for="(ad, index) in bottomList" :key="index">
-							    <div :class="['dot', index === swiperCurrent ? 'active' : '']"></div>
-							  </div>
-							</div>
-						</view>
+									<view class="name">{{item.name}}</view>
+									<view class="price">
+										<image class="gem" src="../../static/images/gem.png"></image>
+										{{item.price}}
+									</view>
+								</view>
+							</swiper-item>
+						</swiper>
+						
+						<div class="dots-container">
+						  <div v-for="(ad, index) in bottomList" :key="index">
+							<div :class="['dot', index === swiperCurrent ? 'active' : '']"></div>
+						  </div>
+						</div>
 					</view>
+				</view>
 					
 				<view class="payment">
 					<view class="recharge">

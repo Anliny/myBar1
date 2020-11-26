@@ -155,7 +155,6 @@
 		font-weight: bolder;
 		line-height: 67.33upx;
 		color: #bf72ac;
-		/* margin-top:10rpx; */
 		font-style: oblique;
 	}
 	.chatContanner .chatItem .userIcon {
@@ -206,7 +205,7 @@
 	}
 	.chatContanner .systemChatItem .text{
 		font-size: 28upx;
-		font-weight: bolder;
+		// font-weight: bolder;
 		color: #FFFFFF;
 		min-height: 30rpx;
 		line-height: 40rpx;
@@ -220,12 +219,12 @@
 		position: relative;
 	}
 	.chatContanner .systemChatItem .goods .goodsIcon{
-		width: 68rpx;
-		    height: 169rpx;
-		    position: absolute;
-		    bottom: -12px;
-		    left: 5px;
-			transform: rotate(10deg);
+		width: 43rpx;
+		height: 140rpx;
+		position: absolute;
+		bottom: -17px;
+		left: 5px;
+		transform: rotate(15deg) translate(10px);
 	}
 	.chatContanner .systemChatItem .goods .number{
 		position: absolute;
@@ -281,9 +280,10 @@
 		border-radius: 74upx;
 		line-height: 74upx;
 		color: #fff;
+		margin-right: 10upx;
 	}
 	.bottomWapper .chatWapper .gave{
-		margin-right: 10upx;
+		
 		width: 74upx;
 		height: 74upx;
 		border-radius: 50%;
@@ -304,7 +304,6 @@
 		height: 465.2upx;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
 	}
 	.maskWapper .goodsWapper .goodsItem{
 		flex: 1;
@@ -348,7 +347,7 @@
 		display: flex;
 		flex-direction: row;
 		  justify-content: space-between;
-		  margin-top: 20upx;
+		  margin-top: 60upx;
 	}
 	.payment .recharge{
 		background-color: #74747f;
