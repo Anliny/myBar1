@@ -187,6 +187,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 var _mock = __webpack_require__(/*! ./mock.js */ 41);var uniSwiperDot = function uniSwiperDot() {__webpack_require__.e(/*! require.ensure | components/uni-swiper-dot/uni-swiper-dot */ "components/uni-swiper-dot/uni-swiper-dot").then((function () {return resolve(__webpack_require__(/*! @/components/uni-swiper-dot/uni-swiper-dot.vue */ 131));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   components: { uniSwiperDot: uniSwiperDot },
@@ -218,22 +221,22 @@ var _mock = __webpack_require__(/*! ./mock.js */ 41);var uniSwiperDot = function
     },
     submitBoy: function submitBoy(e) {
       // console.log(JSON.stringify(e));
-      var id = e.currentTarget.dataset.id;
+      // var id=e.currentTarget.dataset.id;
 
-      this.current = 0;
-      this.info = [];
+      // this.current=0;
+      // this.info=[];
 
-      if (id == 1) {
-        console.log(id + '--boy----' + this.current);
-        uni.redirectTo({
-          url: '/pages/users_grils/index' });
+      // if(id==1){
+      // 	console.log(id+'--boy----'+this.current);
+      // 	uni.redirectTo({
+      // 	  url: '/pages/users_grils/index'
+      // 	});
 
-
-        // this.info=userData1;
-        // console.log(userData1);
-      } else {
-          // this.info=userData;
-        }
+      // 	// this.info=userData1;
+      // 	// console.log(userData1);
+      // }else{
+      // 	// this.info=userData;
+      // }
     },
     subMit: function subMit(e) {
       //跳转对应的应邀页面

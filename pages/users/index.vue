@@ -15,7 +15,10 @@
 		    </swiper>
 		</uni-swiper-dot>
 		<view class="textWapper">
-			<view class="icon" @tap="submitBoy" data-id="1"><text class="icon_text tk-acumin-pro">Live</text><text class="sex">girls</text></view>
+			<view class="icon" @tap="submitBoy" data-id="1">
+				<text class="icon_text tk-acumin-pro">Live</text>
+				<text class="sex">girls</text>
+			</view>
 			<view class="text tk-acumin-pro">Current Songs</view>
 		</view>
 		<view class="bottles">
@@ -82,22 +85,22 @@
 			},
 			submitBoy(e){
 				// console.log(JSON.stringify(e));
-				var id=e.currentTarget.dataset.id;
+				// var id=e.currentTarget.dataset.id;
 				
-				 this.current=0;
-				this.info=[];
+				// this.current=0;
+				// this.info=[];
 				
-				if(id==1){
-					console.log(id+'--boy----'+this.current);
-					uni.redirectTo({
-					  url: '/pages/users_grils/index'
-					});
+				// if(id==1){
+				// 	console.log(id+'--boy----'+this.current);
+				// 	uni.redirectTo({
+				// 	  url: '/pages/users_grils/index'
+				// 	});
 				
-					// this.info=userData1;
-					// console.log(userData1);
-				}else{
-					// this.info=userData;
-				}
+				// 	// this.info=userData1;
+				// 	// console.log(userData1);
+				// }else{
+				// 	// this.info=userData;
+				// }
 			},
 			subMit(e){
 				//跳转对应的应邀页面

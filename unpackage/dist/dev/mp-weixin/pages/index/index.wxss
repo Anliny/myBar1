@@ -334,6 +334,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /*每个页面公共css */
 .content {
 		height: 100%;
@@ -620,9 +632,7 @@
 		display: flex;
 		-webkit-flex-wrap: wrap;
 		        flex-wrap: wrap;
-		-webkit-box-pack: justify;
-		-webkit-justify-content: space-between;
-		        justify-content: space-between;
+		/* justify-content: space-between; */
 }
 .maskWapper .goodsWapper .goodsItem{
 		-webkit-box-flex: 1;
@@ -675,7 +685,7 @@
 		  -webkit-box-pack: justify;
 		  -webkit-justify-content: space-between;
 		          justify-content: space-between;
-		  margin-top: 20rpx;
+		  margin-top: 60rpx;
 }
 .payment .recharge{
 		background-color: #74747f;
@@ -740,11 +750,52 @@ page{
 .fontSize{
 		color: #007AFF;
 }
-/* "http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/font.css"; */
-/* page{
-	height: 100%
+.dots-container {
+  position: absolute;
+  width: 120rpx;
+  left: 50%;
+  margin-left: -60rpx;
+  top: 530rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  background:-webkit-linear-gradient(#d6d6d6, #5d5d5d);
+  background:linear-gradient(#d6d6d6, #5d5d5d);
+  border-radius: 8rpx;
 }
-.fontSize{
-	color: #007AFF;
+.dot {
+  margin-right: 0;
+  width: 60rpx;
+  height: 8rpx;
+  border-radius:0;
+}
+.dot.active {
+  background:-webkit-linear-gradient(left, #68248b, #cf6a8e);
+  background:linear-gradient(90deg, #68248b, #cf6a8e);
+  border-radius: 8rpx;
+}
+/* /deep/ .uni-swiper-wrapper{
+	overflow: visible;
+}
+/deep/ .uni-swiper-dots-horizontal{
+	bottom: -30rpx;
+}
+/deep/ .uni-swiper-dots{
+	background:linear-gradient(#fff, #b4b4b4);
+	border-radius: 8rpx;
+}
+/deep/ .uni-swiper-dots-horizontal .uni-swiper-dot{
+	margin-right: 0;
+	width: 60rpx;
+	height: 8rpx;
+	border-radius:0;
+	
+}
+/deep/ .uni-swiper-dots-horizontal .uni-swiper-dot-active{
+	background:linear-gradient(90deg, #68248b, #cf6a8e);
+	border-radius: 8rpx;
 } */
 

@@ -233,6 +233,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
 // import hycamera from "@/components/shusheng-hycamera/shusheng-hycamera.vue"
 var _default = {
   components: {
@@ -241,6 +250,7 @@ var _default = {
   },
   data: function data() {var _ref;
     return _ref = {
+      swiperCurrent: 0,
       iStatusBarHeight: 0,
       scrollTop: 200,
       recharge: 0,
@@ -277,6 +287,8 @@ var _default = {
       type: 1 }]), _defineProperty(_ref, "bottomList",
 
 
+
+    [
     [
     {
       id: 1,
@@ -317,7 +329,10 @@ var _default = {
       id: 8,
       icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol8.png',
       name: '四叶草',
-      price: 79 },
+      price: 79 }],
+
+
+    [
     {
       id: 9,
       icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol7.png',
@@ -327,7 +342,9 @@ var _default = {
       id: 10,
       icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol8.png',
       name: '四叶草',
-      price: 79 }]), _ref;
+      price: 79 }]]), _ref;
+
+
 
 
 
@@ -454,21 +471,15 @@ var _default = {
       // 跳转商品购买 (这种跳转方式在H5上只能用相对路径)
       // uni.navigateTo({url:'../goods/index'});
     },
-    //调用摄像头或选择文件上传
-    // chooseImage() {
-    // 	console.log(2222222);
-    // 	uni.chooseImage({
-    // 		count: 6, //默认9
-    // 		sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-    // 		sourceType: ['album','camera'], //从相册选择、摄像头
-    // 		success: function(res) {
-    // 			console.log(JSON.stringify(res.tempFilePaths));
-    // 		}
-    // 	});
-    // },
+
     // 跳转到用户列表
     handleGoUsers: function handleGoUsers() {
       uni.navigateTo({ url: '/pages/users/index' });
+    },
+
+    // 切换礼物
+    swiperChange: function swiperChange(e) {
+      this.swiperCurrent = e.detail.current;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

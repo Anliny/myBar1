@@ -56,21 +56,30 @@
 		
 		<n-transition ref="pop" speed="ease-in-out" :height="500" :maskVal="0.5">
 			<view class="maskWapper">
-					<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
-					    @scroll="scroll">
-						<view class="goodsWapper" >
-							<view class="goodsItem" @click="handleGoodsItem(item)" v-for="item in bottomList" :key="item.id">
-								<view class="icon" :class="[item.id == goodsItemActive ? 'iconHover' : '']">
-									<image :src="item.icon" mode="scaleToFill"></image>
-								</view>
-								<view class="name">{{item.name}}</view>
-								<view class="price">
-									<image class="gem" src="../../static/images/gem.png"></image>
-									{{item.price}}
-								</view>
-							</view>
+					<view class="page-section swiper">
+						<view class="goodsWapper">
+							<swiper class="swiper" @change="swiperChange" style="width: 100%; height: 100%;" :indicator-dots="false" :autoplay="false" :duration="300">
+								<swiper-item class="goodsWapper" v-for="(row,index) in bottomList" :key="index">
+									<view class="goodsItem" @click="handleGoodsItem(item)" v-for="item in row" :key="item.id">
+										<view class="icon" :class="[item.id == goodsItemActive ? 'iconHover' : '']">
+											<image :src="item.icon" mode="scaleToFill"></image>
+										</view>
+										<view class="name">{{item.name}}</view>
+										<view class="price">
+											<image class="gem" src="../../static/images/gem.png"></image>
+											{{item.price}}
+										</view>
+									</view>
+								</swiper-item>
+							</swiper>
+							
+							<div class="dots-container">
+							  <div v-for="(ad, index) in bottomList" :key="index">
+							    <div :class="['dot', index === swiperCurrent ? 'active' : '']"></div>
+							  </div>
+							</div>
 						</view>
-					</scroll-view>
+					</view>
 					
 				<view class="payment">
 					<view class="recharge">
@@ -100,6 +109,7 @@
 		},
 		data() {
 			return {
+				swiperCurrent:0,
 				iStatusBarHeight: 0,
 				scrollTop:200,
 				recharge:0,
@@ -136,58 +146,65 @@
 						type:1,
 					}
 				],
+				
 				bottomList:[
-					{
-						id:1,
-						icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol1.png',
-						name:'四叶草',
-						price: 60
-					},{
-						id:2,
-						icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol2.png',
-						name:'四叶草',
-						price: 123
-					},{
-						id:3,
-						icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol3.png',
-						name:'四叶草',
-						price: 76
-					},{
-						id:6,
-						icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol4.png',
-						name:'四叶草',
-						price: 79
-					},{
-						id:4,
-						icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol5.png',
-						name:'四叶草',
-						price: 80
-					},{
-						id:5,
-						icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol6.png',
-						name:'四叶草',
-						price: 123
-					},{
-						id:7,
-						icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol7.png',
-						name:'四叶草',
-						price: 45
-					},{
-						id:8,
-						icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol8.png',
-						name:'四叶草',
-						price: 79
-					},{
-						id:9,
-						icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol7.png',
-						name:'四叶草',
-						price: 45
-					},{
-						id:10,
-						icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol8.png',
-						name:'四叶草',
-						price: 79
-					}
+					[
+						{
+							id:1,
+							icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol1.png',
+							name:'四叶草',
+							price: 60
+						},{
+							id:2,
+							icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol2.png',
+							name:'四叶草',
+							price: 123
+						},{
+							id:3,
+							icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol3.png',
+							name:'四叶草',
+							price: 76
+						},{
+							id:6,
+							icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol4.png',
+							name:'四叶草',
+							price: 79
+						},{
+							id:4,
+							icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol5.png',
+							name:'四叶草',
+							price: 80
+						},{
+							id:5,
+							icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol6.png',
+							name:'四叶草',
+							price: 123
+						},{
+							id:7,
+							icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol7.png',
+							name:'四叶草',
+							price: 45
+						},{
+							id:8,
+							icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol8.png',
+							name:'四叶草',
+							price: 79
+						}
+					],
+					[
+						{
+							id:9,
+							icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol7.png',
+							name:'四叶草',
+							price: 45
+						},{
+							id:10,
+							icon: 'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/alcohol8.png',
+							name:'四叶草',
+							price: 79
+						}
+					]
+					
 				]
 			}
 		},
@@ -313,22 +330,17 @@
 				// 跳转商品购买 (这种跳转方式在H5上只能用相对路径)
 				// uni.navigateTo({url:'../goods/index'});
 			},
-			//调用摄像头或选择文件上传
-			// chooseImage() {
-			// 	console.log(2222222);
-			// 	uni.chooseImage({
-			// 		count: 6, //默认9
-			// 		sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-			// 		sourceType: ['album','camera'], //从相册选择、摄像头
-			// 		success: function(res) {
-			// 			console.log(JSON.stringify(res.tempFilePaths));
-			// 		}
-			// 	});
-			// },
+			
 			// 跳转到用户列表
 			handleGoUsers(){
 				uni.navigateTo({url:'/pages/users/index'});
-			}
+			},
+			
+			// 切换礼物
+			swiperChange (e) {
+			    this.swiperCurrent = e.detail.current
+			  }
+
 		}
 	}
 </script>
@@ -336,11 +348,46 @@
 <style>
 	/*每个页面公共css */
 	@import url("./style.css");
-	 /* "http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/font.css"; */
-	/* page{
-		height: 100%
+	.dots-container {
+	  position: absolute;
+	  width: 120rpx;
+	  left: 50%;
+	  margin-left: -60rpx;
+	  top: 530rpx;
+	  display: flex;
+	  justify-content: center;
+	  background:linear-gradient(#d6d6d6, #5d5d5d);
+	  border-radius: 8rpx;
 	}
-	.fontSize{
-		color: #007AFF;
+	.dot {
+	  margin-right: 0;
+	  width: 60rpx;
+	  height: 8rpx;
+	  border-radius:0;
+	}
+	.dot.active {
+	  background:linear-gradient(90deg, #68248b, #cf6a8e);
+	  border-radius: 8rpx;
+	}
+	/* /deep/ .uni-swiper-wrapper{
+		overflow: visible;
+	}
+	/deep/ .uni-swiper-dots-horizontal{
+		bottom: -30rpx;
+	}
+	/deep/ .uni-swiper-dots{
+		background:linear-gradient(#fff, #b4b4b4);
+		border-radius: 8rpx;
+	}
+	/deep/ .uni-swiper-dots-horizontal .uni-swiper-dot{
+		margin-right: 0;
+		width: 60rpx;
+		height: 8rpx;
+		border-radius:0;
+		
+	}
+	/deep/ .uni-swiper-dots-horizontal .uni-swiper-dot-active{
+		background:linear-gradient(90deg, #68248b, #cf6a8e);
+		border-radius: 8rpx;
 	} */
 </style>
