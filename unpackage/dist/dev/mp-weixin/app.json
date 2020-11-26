@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/index",
+    "pages/goods/index",
+    "pages/users/index",
+    "pages/users_grils/index",
+    "pages/mine/index",
+    "pages/photos/index",
+    "pages/share/index",
+    "pages/camera/index",
+    "pages/rechange/index",
+    "pages/widraw/index",
+    "pages/lxwm/index",
+    "pages/xybz/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {}
+}

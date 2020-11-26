@@ -16,7 +16,7 @@
 			</view>
 		</view>
 		<view class="textWapper">
-			<view class="icon">Live</view>
+			<view class="icon tk-acumin-pro">Live</view>
 			<view class="text tk-acumin-pro">Current Songs</view>
 		</view>
 		<view :style="{ height: 91 - iStatusBarHeight + 'px'}" class="empetTop"></view>
@@ -36,7 +36,7 @@
 								<view class="text">{{item.text}}</view>
 								<view class="goods">
 									<image class="goodsIcon" :src="item.goodsIcon" mode="scaleToFill"></image>
-									<view class="number">x {{item.goodsNumber}}</view>
+									<view class="number tk-acumin-pro">x {{item.goodsNumber}}</view>
 								</view>
 							</view>
 						</view>
@@ -336,6 +336,7 @@
 <style>
 	/*每个页面公共css */
 	@import url("./style.css");
+	 /* "http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/font.css"; */
 	/* page{
 		height: 100%
 	}

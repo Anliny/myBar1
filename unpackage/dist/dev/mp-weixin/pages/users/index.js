@@ -187,8 +187,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 var _mock = __webpack_require__(/*! ./mock.js */ 41);var uniSwiperDot = function uniSwiperDot() {__webpack_require__.e(/*! require.ensure | components/uni-swiper-dot/uni-swiper-dot */ "components/uni-swiper-dot/uni-swiper-dot").then((function () {return resolve(__webpack_require__(/*! @/components/uni-swiper-dot/uni-swiper-dot.vue */ 131));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   components: { uniSwiperDot: uniSwiperDot },

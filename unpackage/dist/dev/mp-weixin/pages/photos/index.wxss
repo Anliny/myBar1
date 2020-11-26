@@ -571,7 +571,7 @@ page{
 		background-color: rgba(73,14,56,0.78);
 		display: inline-block;
 		padding: 0 10rpx;
-		font-size: 28rpx;
+		font-size: 34rpx;
 		font-weight: bolder;
 		line-height: 67.33rpx;
 		color: #bf72ac;
@@ -584,7 +584,8 @@ page{
 }
 .chatContanner .chatItem .text{
 		font-size: 28rpx;
-		font-weight: bolder;
+		/* font-weight: bolder;
+ */
 		color: #FFFFFF;
 		min-height: 30rpx;
 		line-height: 30rpx;
@@ -616,7 +617,7 @@ page{
 		background-color: rgba(73,14,56,0.78);
 		display: inline-block;
 		padding: 0 10rpx;
-		font-size: 28rpx;
+		font-size: 34rpx;
 		font-weight: bolder;
 		line-height: 67.33rpx;
 		color: #bf72ac;

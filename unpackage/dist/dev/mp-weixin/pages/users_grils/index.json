@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "users_grils",
+  "usingComponents": {
+    "uni-swiper-dot": "/components/uni-swiper-dot/uni-swiper-dot"
+  }
+}

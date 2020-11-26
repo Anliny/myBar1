@@ -15,14 +15,12 @@
 		    </swiper>
 		</uni-swiper-dot>
 		<view class="textWapper">
-			<view class="icon" @tap="submitBoy" data-id="1"><text class="icon_text">Live</text><text class="sex">girls</text></view>
+			<view class="icon" @tap="submitBoy" data-id="1"><text class="icon_text tk-acumin-pro">Live</text><text class="sex">girls</text></view>
 			<view class="text tk-acumin-pro">Current Songs</view>
 		</view>
 		<view class="bottles">
 			<image :src="bottles" mode="scaleToFill"></image> 
 		</view>
-		
-		
 		
 		<view class="table">
 			<view class="tableLeft">

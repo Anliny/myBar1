@@ -2,7 +2,7 @@
 	<view class="hycamera">
 		<cover-image class="contentCamera" @tap="videoback" :src="cameraIcon" mode="scaleToFill"></cover-image>
 		<cover-view class="textWapper">
-			<cover-view class="icon">Live</cover-view>
+			<cover-view class="icon tk-acumin-pro">Live</cover-view>
 			<cover-view class="text tk-acumin-pro">Current Songs</cover-view>
 		</cover-view>
 		<cover-view :class="buttonClass" @touchstart="buttonStart" @touchend="buttonEnd">
