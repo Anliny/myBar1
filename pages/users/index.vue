@@ -54,7 +54,7 @@
 
 <script>
 	import uniSwiperDot from "@/components/uni-swiper-dot/uni-swiper-dot.vue"
-     import {userData,userDataGriles,tableList,userData1} from "./mock.js"
+    import {userData,userDataGriles,tableList,userData1} from "./mock.js"
 	export default {
 		components: {uniSwiperDot},
 		data() {
@@ -88,20 +88,16 @@
 				});
 			},
 			submitBoy(e){
-				console.log(this.queryBoy)
+				// 点击过后 请求输入，切换回到第一屏
+				this.current = 0
 				if(this.queryBoy == 0){
 					this.BoyText = 'boy'
 					this.queryBoy = 1
-					this.$nextTick(() =>　{
-						
 					this.info = userDataGriles
-					})
 				} else {
 					this.BoyText = 'griles'
 					this.queryBoy = 0
-					this.$nextTick(() =>　{
 					this.info = userData
-					})
 				}
 			},
 			subMit(e){

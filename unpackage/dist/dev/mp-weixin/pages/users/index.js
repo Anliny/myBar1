@@ -223,21 +223,17 @@ var _mock = __webpack_require__(/*! ./mock.js */ 41);var uniSwiperDot = function
         url: '/pages/mine/index' });
 
     },
-    submitBoy: function submitBoy(e) {var _this = this;
-      console.log(this.queryBoy);
+    submitBoy: function submitBoy(e) {
+      // 点击过后 请求输入，切换回到第一屏
+      this.current = 0;
       if (this.queryBoy == 0) {
         this.BoyText = 'boy';
         this.queryBoy = 1;
-        this.$nextTick(function () {
-
-          _this.info = _mock.userDataGriles;
-        });
+        this.info = _mock.userDataGriles;
       } else {
         this.BoyText = 'griles';
         this.queryBoy = 0;
-        this.$nextTick(function () {
-          _this.info = _mock.userData;
-        });
+        this.info = _mock.userData;
       }
     },
     subMit: function subMit(e) {

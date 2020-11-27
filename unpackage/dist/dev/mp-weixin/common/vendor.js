@@ -8174,7 +8174,7 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.userData1 = exports.tableList = exports.userData = void 0;var userData = [
+Object.defineProperty(exports, "__esModule", { value: true });exports.userDataGriles = exports.userData1 = exports.tableList = exports.userData = void 0;var userData = [
 {
   content: [
   {
@@ -8414,7 +8414,7 @@ var userDataGriles = [
     src: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/users/tu3.png',
     isSide: true,
     total: 99 },
-  null, null] }];
+  null, null] }];exports.userDataGriles = userDataGriles;
 
 
 
