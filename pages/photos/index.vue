@@ -29,10 +29,10 @@
 						<image :id="`myVideo${index}`" :src="item.mediaUrl" mode="scaleToFill"></image>
 					</view>
 					
-					<cover-view class="textWapper">
-						<cover-view class="icon tk-acumin-pro">{{item.song.icon}}</cover-view>
-						<cover-view class="text tk-acumin-pro">{{item.song.name}}</cover-view>
-					</cover-view>
+					<view class="textWapper">
+						<view class="icon tk-acumin-pro">{{item.song.icon}}</view>
+						<view class="text tk-acumin-pro">{{item.song.name}}</view>
+					</view>
 					<view class="chatContanner">
 						<view class="chatView" style="">
 							<scroll-view ref="refScollView" :scroll-top="item.scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"

@@ -21,9 +21,16 @@
 				<view  class="btncz" :style="{background:`url(${cz_tx}) no-repeat center`}">可充值</view>
 				<view class="btnsd" >22698</view>
 			</view>
+			<view style="display: block;clear: both;"></view>
 		</view>
 		<view >
 		<ul>
+			<li class="btnPHONT" @tap="publish">
+				<image class="phone_img"  :src="ListIcon"></image>
+				<text>我的发布</text>
+				<image class="right_img"  :src="right_img"></image>
+				<view class="xian"></view>
+			</li>
 			<li class="btnPHONT" @tap="llmine">
 				<image class="phone_img"  :src="phone_img"></image>
 				<text>联络我们</text>
@@ -66,6 +73,7 @@
 				right_img:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/right.png',
 				wen_img:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/wen.png',
 				tc_img:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/submit.png',
+				ListIcon:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/mine/fabu.png',
 				current: 0,
 				mode: 'round',
 			}
@@ -119,6 +127,12 @@
 				console.log(666666);
 				uni.navigateTo({
 				   url: '/pages/lxwm/index'
+				});
+			},
+			// 我的发布
+			publish(){
+				uni.navigateTo({
+				   url: '/pages/list/index'
 				});
 			},
 			xybz(){

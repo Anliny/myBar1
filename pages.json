@@ -29,7 +29,19 @@
 			"style": {
 				"navigationBarTitleText": "users"
 			}
+		},
+		{
+			"path": "pages/list/index",
+			"style": {
+				"navigationBarTitleText": "list"
+			}
 		},{
+			"path": "pages/detail/index",
+			"style": {
+				"navigationBarTitleText": "detail"
+			}
+		},
+		{
 			"path": "pages/users_grils/index",
 			"style": {
 				"navigationBarTitleText": "users_grils"

@@ -51,7 +51,8 @@ page,.content{
 	}
 	.btn-sdhz{
 		width:100%;
-		padding-bottom: 40upx;;
+		padding-bottom: 40upx;
+		height:239upx;
 	}
 	.btn-hz{
 		width:339upx;
@@ -157,6 +158,7 @@ page,.content{
 	line-height:95upx;
 	position: relative;
 	padding-bottom: 0upx;
+	height: 126rpx;
 }
 
 .phone_img{
@@ -164,7 +166,6 @@ page,.content{
 	height:35upx;
 	line-height: 35upx;
 	margin-left: 50upx;
-	margin-top: 300upx;
 }
 .right_img{
 	width:16upx;
@@ -196,11 +197,8 @@ page,.content{
 	text-align: center;
 	line-height: 88upx;
 	height:88upx;
-	// border:2upx solid #007AFF;
 	margin-left:80upx;
 	position: absolute;
-	z-index:;
-	top:1065upx;
 	color:#DB4686;
 	font-size: 28upx;
 }

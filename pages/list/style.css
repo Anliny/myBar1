@@ -1,0 +1,36 @@
+
+	.content {
+		height: 100%;
+		background-size:750upx 100%;
+	}
+	page{
+		height: 100%
+	}
+	.fontSize{
+		color: #007AFF;
+	}
+	.page-bar{
+		height: 90rpx;
+		text-align: center;
+		font-size: 32rpx;
+		height: 90rpx;
+		color: #fff;
+		line-height: 90rpx;
+	}
+	.page-bar .left-icon{
+		height: 90rpx;
+		width: 90rpx;
+		float: left;		 
+		padding: 30rpx;
+		box-sizing: border-box;
+	}
+	.page-bar .right-icon{
+		height: 90rpx;
+		width: 90rpx;
+		float: right;		 
+		padding: 30rpx;
+		box-sizing: border-box;
+	}
+	
+	
+	
