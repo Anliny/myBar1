@@ -39,9 +39,9 @@
 		height: 100%;
 	}
 	.comment{height: 100%;border-radius: 20rpx 20rpx 0 0;background-color: rgb(28,22,45);color: #F5F5F5;}
-	.icon-btn-group{display: flex;justify-content: center;height: 45rpx;padding: 20rpx;}
+	.icon-btn-group{display: flex;justify-content: center;height: 45rpx;border-bottom: 4rpx solid rgba(7, 4, 26, 0.53);padding: 20rpx 0;margin: 0 20rpx;}
 	.icon-btn-group .left,.icon-btn-group .right{flex: 1;display: flex;justify-content: center;}
-	.icon-btn-group .left{border-right: 4rpx dashed #BBBBBB;}
+	.icon-btn-group .left{border-right: 4rpx solid rgba(7, 4, 26, 0.53);}
 	.icon-btn-group .left image,.icon-btn-group .right image{width: 36rpx;height: auto;margin-right: 8rpx;vertical-align: middle;margin-right: 20rpx;}
 	.icon-btn-group .left .text,.icon-btn-group .right .text{font-size: 30rpx;line-height: 45rpx;}
 	
@@ -52,7 +52,7 @@
 	.comment-list .comment-item .title-wapper .title{height: 100rpx;margin-left: 110rpx;}
 	.comment-list .comment-item .title-wapper .title .name{font-size: 32rpx;}
 	.comment-list .comment-item .title-wapper .title .text{font-size: 24rpx;}
-	.comment-list .comment-item .content{font-size: 28rpx;margin-left: 110rpx;padding-bottom: 20rpx; border-bottom:4rpx dashed #BBBBBB;}
+	.comment-list .comment-item .content{font-size: 28rpx;margin-left: 110rpx;padding-bottom: 20rpx; border-bottom:4rpx solid rgba(7, 4, 26, 0.53);}
 	.comment-list .comment-item:last-child .content{ border-bottom:4rpx dashed rgb(28,22,45);}
 	
 	

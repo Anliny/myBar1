@@ -92,6 +92,7 @@
 	  padding: 10px;
 	  background-color: rgb(28,38,75);
 	  color: #F5F5F5;
+	  border-radius: 0 0 12rpx 12rpx;
 	}
 	.page-list .cnt .item-user {
 	  padding: 10rpx;
