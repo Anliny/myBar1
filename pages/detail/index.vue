@@ -21,24 +21,24 @@
 			@error="videoErrorCallback" 
 			:autoplay="true" loop>
 		</video>
-		<n-transition ref="pop" speed="ease-in-out" :height="500" :maskVal="0.5">
+		<n-transition ref="pop" speed="ease-in-out" :height="700" :maskVal="0" :isHide="true">
 			<view class="comment">
 				<view class="icon-btn-group">
 					<view class="left">
 						<image :src="enjoyIcon" mode="aspectFit"></image>
-						<view class="">{{data.enjoy}}</view>
+						<view class="text">{{data.enjoy}}</view>
 					</view>
 					<view class="right">
 						<image :src="chatIcon" mode="aspectFit"></image>
-						<view class="">{{data.chat}}</view>
+						<view class="text">{{data.chat}}</view>
 					</view>
 				</view>
-				<view class="comment-list" v-for="item in data.comments" :key="item.userId" >
-					<view class="comment-item">
+				<view class="comment-list"  >
+					<view class="comment-item" v-for="item in data.comments" :key="item.userId">
 						<view class="title-wapper">
 							<image :src="item.avatar" mode="aspectFit"></image>
 							<view class="title">
-								<text class="name">{{item.name}}</text>
+								<text class="name">{{item.name}}</text><br/>
 								<text class="text">{{item.text}}</text>
 							</view>
 						</view>
@@ -89,10 +89,19 @@
 							userId:1,
 							text:'音乐点亮世界',
 							content:'本仓库为了帮助更多初学者或是爱好者，仅供学习交流，严禁用于商业用途，仓库中使用Api均来自于网络，如涉及侵犯个人或者团体利益，请与我取得联系，我将主动删除一切相关资料，谢谢！'
+						},
+						{
+							avatar:'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/avatar1.png',
+							name:'Frodo Baggins',
+							userId:1,
+							text:'音乐点亮世界',
+							content:'本仓库为了帮助更多初学者或是爱好者，仅供学习交流，严禁用于商业用途，仓库中使用Api均来自于网络，如涉及侵犯个人或者团体利益，请与我取得联系，我将主动删除一切相关资料，谢谢！'
 						}
 					]
 				}
-			
+			this.$nextTick(()=>{
+				this.$refs['pop'].show()
+			})
 		},
 		methods: {
 			// 视频错误
