@@ -246,7 +246,7 @@
 		border-radius: 74upx;
 		line-height: 74upx;
 		color: #fff;
-		margin-right: 10upx;
+		
 	}
 	.bottomWapper .chatWapper .gave{
 		width: 74upx;
@@ -254,6 +254,7 @@
 		border-radius: 50%;
 		float: right;
 		background-color: #674892;
+		margin-right: 10upx;
 	}
 	
 	.maskWapper{

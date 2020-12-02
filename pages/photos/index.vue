@@ -62,8 +62,9 @@
 						<view class="line"></view>
 						<view class="chatWapper">
 							<input type="text" class="chatInput" @focus="getIndex(index)" @blur="getChat" :value="item.inputValue" />
-							<image class="gave" :src="goodsBtnIcon" @click="handleGoods(index)" mode="scaleToFill"></image>
 							<view class="submit" @click="handleSubmit(index)">发送</view>
+							<image class="gave" :src="goodsBtnIcon" @click="handleGoods(index)" mode="scaleToFill"></image>
+							<image class="gave" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/dianzan.png'"  mode="scaleToFill"></image>
 						</view>
 					</view>
 				</view>
@@ -325,6 +326,7 @@ export default {
 			this.goodsItemActive = data.id
 			this.recharge = data.price
 			this.number = 1
+			uni.navigateTo({url:'/pages/gift/index'})
 		},
 		handleConut(){
 			this.number ++

@@ -49,8 +49,9 @@
 			<view class="line"></view>
 			<view class="chatWapper">
 				<input adjust-position type="text" class="chatInput" @focus="handleFocus" @blur="getChat" :value="inputValue" />
-				<image class="gave" :src="'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/goodsBtn.png'"  @click="handleGoods" mode="scaleToFill"></image>
 				<view class="submit" @click="handleSubmit">发送</view>
+				<image class="gave" :src="'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/goodsBtn.png'"  @click="handleGoods" mode="scaleToFill"></image>
+				<image class="gave" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/dianzan.png'"  mode="scaleToFill"></image>
 			</view>
 		</view>
 		
@@ -267,6 +268,7 @@
 				this.goodsItemActive = data.id
 				this.recharge = data.price
 				this.number = 1
+				uni.navigateTo({url:'/pages/gift/index'});
 			},
 			
 			// 获取屏幕高度

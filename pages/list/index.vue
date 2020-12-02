@@ -2,7 +2,7 @@
 	<view class="content" :style="{backgroundImage:`url(${BGUrl})`}" >
 		<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
 		<view class="page-bar">
-			<image class="left-icon" :src="leftIocon" mode="aspectFill"></image>
+			<image @click="handleGoBack" class="left-icon" :src="leftIocon" mode="aspectFill"></image>
 			<view class="right-icon" ></view>
 			<view class="title">我的发布</view> 
 		</view>
@@ -74,6 +74,10 @@
 			handleList(data){
 				console.log(data)
 				uni.navigateTo({url:`/pages/detail/index?id=${data.id}`})
+			},
+			// 返回
+			handleGoBack(){
+				uni.navigateBack()
 			}
 		}
 	}

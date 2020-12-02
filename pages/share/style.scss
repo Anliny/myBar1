@@ -124,17 +124,19 @@
 
 .shareBtn{
 	height: 85rpx;
-	 width: 300rpx;
-	padding: 0 40rpx;
-	font-size: 30rpx;
-	text-align: center;
-	font-weight: bold;
-	line-height: 85rpx;
-	color:rgb(220,221,221);
-	background-color: rgb(231,47,85);
+	width: 100%;
 	position: absolute;
 	bottom: 20rpx;
 	left: 10rpx;
+	display: flex;
+	justify-content: flex-start;
+}
+.shareBtn .btn-image{
+	width: 300rpx;
+	height: 85rpx;
+}
+.shareBtn .btn-image1{
+	width: 200rpx;
 }
 .shareBtn1{
 	height: 85rpx;
@@ -169,7 +171,7 @@
 	height: 349rpx;
 	width: 134rpx;
 	bottom: 20rpx;
-	right: 76rpx;
+	right: 40rpx;
 }
 	
 	

@@ -1,6 +1,6 @@
 <template>
 	<view class="container" v-show="showMask">
-		<view class="mask" :style="{'opacity': maskVal}" @click="hide"></view>
+		<view class="mask" :style="{'opacity': maskVal}" @click="isHide && hide"></view>
 		<view class="main" :style="{transform: `translateY(${transY}rpx)`,'transition-timing-function': speed,'height': height+'rpx'}" @transitionend="onTransitionend">
 			<slot></slot>
 		</view>

@@ -2,7 +2,7 @@
 	<view class="content" :style="{backgroundImage:`url(${BGUrl})`}" >
 		<!-- <view :style="{ height: iStatusBarHeight + 'px'}"></view> -->
 		<view class="page-bar" :style="{top:`${iStatusBarHeight}px`}">
-			<image class="left-icon" :src="leftIocon" mode="aspectFill"></image>
+			<image @click="handleGoBack" class="left-icon" :src="leftIocon" mode="aspectFill"></image>
 			<view class="right-icon" ></view>
 			<view class="title">发布详情</view> 
 		</view>
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-	import nTransition from "@/components/n-transition/n-transition.vue"
+	import nTransition from "@/components/n-transition/n-transition1.vue"
 	export default {
 		components:{
 			nTransition
@@ -107,6 +107,10 @@
 			// 视频错误
 			error(event){
 				console.log(event)
+			},
+			// 返回
+			handleGoBack(){
+				uni.navigateBack()
 			}
 		}
 	}

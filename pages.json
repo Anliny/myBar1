@@ -41,6 +41,11 @@
 			"style": {
 				"navigationBarTitleText": "detail"
 			}
+		},{
+			"path": "pages/gift/index",
+			"style": {
+				"navigationBarTitleText": "gift"
+			}
 		},
 		{
 			"path": "pages/users_grils/index",
