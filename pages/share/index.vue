@@ -44,7 +44,7 @@
 				</view>
 			</swiper-item>
 		</swiper>
-	</view>
+	</view> 
 </template>
 
 <script>
