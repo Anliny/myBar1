@@ -1,17 +1,6 @@
 <template>
 	<view class="content" >
-		<!-- <camera   class="hycamera-camera" :device-position="back" bindstop="" flash="auto" @touchstart="buttonStart" @touchend="buttonEnd"></camera> -->
-		<!-- <cover-image class="contentCamera" :src="cameraIcon" mode="scaleToFill"></cover-image>
-		<cover-view class="textWapper">
-			<cover-view class="icon">Live</cover-view>
-			<cover-view class="text tk-acumin-pro">Current Songs</cover-view>
-		</cover-view> -->
-		<!-- <image class="down" :src="downIcon" mode="scaleToFill"></image>
-		<view class="cameraBtn" @click="handleGoPhotos">
-			<view class="article"></view>
-		</view> -->
 		<hycamera class="videoSUBMIT"   @runMethod="getCarmera"></hycamera>
-		<!-- <button type="default" @click="runCarmera">打开摄像机</button> -->
 	</view>
 </template>
 

@@ -1,5 +1,109 @@
 <template>
-	<view class="content" :style="{backgroundImage:`url(${BGUrl})`}" >
+	<swiper style="height: 100%;width: 100%;" :current="1" @change='pageChange'	 class="swiper" :indicator-dots="false" :autoplay="false" :vertical='true' :duration="duration">
+		<swiper-item>
+			<hycamera class="videoSUBMIT"   @runMethod="getCarmera"></hycamera>
+		</swiper-item>
+		<swiper-item>
+			<view class="content" :style="{backgroundImage:`url(${BGUrl})`}" >
+				<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
+				<view class="header" ref="refHeader">
+					<view class="logo">
+						<image :src="logo"   mode="scaleToFill"></image>
+					</view>
+					<view class="nameWapper">
+						<view class="title">上海双人舞酒吧</view>
+						<view class="number">当晚人数：769</view>   
+					</view>
+					<view class="avatar">
+						<view class="item" v-for="(item,index) in avatarList" :key="index" @click="handleGoUsers">
+							<image :src="item" mode="scaleToFill"></image>
+						</view>
+					</view>
+				</view>
+				<view class="textWapper">
+					<view class="icon tk-acumin-pro">Live</view>
+					<view class="text tk-acumin-pro">Current Songs</view>
+				</view>
+				<view :style="{ height: 91 - iStatusBarHeight + 'px'}" class="empetTop"></view>
+				<view class="chatContanner" style="position: relative;" >
+					<view class="chatView" style="">
+						<scroll-view id="scroll" ref="refScollView" :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"@scroll="scroll">
+							<view id="content">
+								<view  v-for="item in chatList" :key="item.id" style="margin-bottom: 10upx;padding: 5rpx 0;">
+									<view class="chatItem" v-if="!item.type">
+										<view class="tableNumber" v-if="item.tableNumber">{{item.tableNumber}}</view>
+										<image class="userIcon" :src="item.userIcon" mode="scaleToFill"></image>
+										<view class="text">{{item.text}}</view>
+									</view>
+									<view class="systemChatItem" v-else>
+										<view class="tableNumber" v-if="item.tableNumber">{{item.tableNumber}}</view>
+										<image class="userIcon" :src="item.userIcon" mode="scaleToFill"></image>
+										<view class="text">{{item.text}}</view>
+										<view class="goods">
+											<image class="goodsIcon" :src="item.goodsIcon" mode="scaleToFill"></image>
+											<view class="number tk-acumin-pro">x {{item.goodsNumber}}</view>
+										</view>
+									</view>
+								</view>
+							</view>
+						 </scroll-view>
+					</view>
+				</view>
+				<view class="empetBottom"></view>
+				<view class="bottomWapper">
+					<view class="line"></view>
+					<view class="chatWapper">
+						<input adjust-position type="text" class="chatInput" @focus="handleFocus" @blur="getChat" :value="inputValue" />
+						<view class="submit" @click="handleSubmit">发送</view>
+						<image class="gave" :src="'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/goodsBtn.png'"  @click="handleGoods" mode="scaleToFill"></image>
+						<image class="gave" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/dianzan.png'"  mode="scaleToFill"></image>
+					</view>
+				</view>
+				
+				<n-transition ref="pop" speed="ease-in-out" :height="500" :maskVal="0.5">
+					<view class="maskWapper">
+						<view class="page-section swiper">
+							<view class="goodsWapper">
+								<swiper class="swiper" @change="swiperChange" style="width: 100%; height: 100%;" :indicator-dots="false" :autoplay="false" :duration="300">
+									<swiper-item class="goodsWapper" v-for="(row,index) in bottomList" :key="index">
+										<view class="goodsItem" @click="handleGoodsItem(item)" v-for="item in row" :key="item.id">
+											<view class="icon" :class="[item.id == goodsItemActive ? 'iconHover' : '']">
+												<image :src="item.icon" mode="scaleToFill"></image>
+											</view>
+											<view class="name">{{item.name}}</view>
+											<view class="price">
+												<image class="gem" src="../../static/images/gem.png"></image>
+												{{item.price}}
+											</view>
+										</view>
+									</swiper-item>
+								</swiper>
+								
+								<div class="dots-container">
+								  <div v-for="(ad, index) in bottomList" :key="index">
+									<div :class="['dot', index === swiperCurrent ? 'active' : '']"></div>
+								  </div>
+								</div>
+							</view>
+						</view>
+							
+						<view class="payment">
+							<view class="recharge">
+								<image class="gem" src="../../static/images/gem.png"></image>
+								{{recharge}}   充值＞
+							</view>
+							<view class="btnGroup" >
+								<view class="number" @click="handleConut">{{number}} ＞</view>
+								<view class="submit" @click="handleGive">送给他</view>
+							</view>
+						</view>
+					</view>
+				</n-transition>
+				<image class="fillImage" v-if="isShowFillImage"  :src="isShowFillImage ? 'https://atour-1300409046.cos.ap-shanghai.myqcloud.com/APNG/%E5%9B%9B%E5%8F%B6%E8%8D%89.png':''" mode="scaleToFill"></image>
+			</view> 
+		</swiper-item>
+	</swiper>
+	<!-- <view class="content" :style="{backgroundImage:`url(${BGUrl})`}" >
 		<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
 		<view class="header" ref="refHeader">
 			<view class="logo">
@@ -95,17 +199,16 @@
 			</view>
 		</n-transition>
 		<image class="fillImage" v-if="isShowFillImage"  :src="isShowFillImage ? 'https://atour-1300409046.cos.ap-shanghai.myqcloud.com/APNG/%E5%9B%9B%E5%8F%B6%E8%8D%89.png':''" mode="scaleToFill"></image>
-			
-			
-	</view>
+	</view> -->
 </template>
 
 <script>
 	import nTransition from "@/components/n-transition/n-transition.vue"
+	import hycamera from "@/components/shusheng-hycamera/shusheng-hycamera.vue"
 	// import hycamera from "@/components/shusheng-hycamera/shusheng-hycamera.vue"
 	export default {
 		components:{
-			nTransition,
+			nTransition,hycamera
 			// hycamera
 		},
 		data() {
@@ -215,21 +318,43 @@
 			 }, 1000);
 			this.getClientHight()
 			this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight
+			
+			switch(uni.getSystemInfoSync().platform){
+			    case 'android':
+			       console.log('客户端是Android')
+			       break;
+			    case 'ios':
+			       console.log('客户端是iOS')
+			       break;
+			    case 'devtools':
+			       console.log('客户端是在开发者工具上')
+			       break;
+			    default:
+			       console.log('客户端是在其他工具上')
+			       break;
+			}
 		},
 		
-		 onPullDownRefresh() {
-		        //监听下拉刷新动作的执行方法，每次手动下拉刷新都会执行一次
-				var that=this;
-		        console.log('refresh')
-		        setTimeout(function () {
-		            // uni.stopPullDownRefresh();  //停止下拉刷新动画
-					// 跳转商品购买 (这种跳转方式在H5上只能用相对路径)
-					uni.navigateTo({url:'/pages/camera/index'});
-					// that.chooseImage();
-		        }, 1000);
-		    },
+		 // onPullDownRefresh() {
+		 //        //监听下拉刷新动作的执行方法，每次手动下拉刷新都会执行一次
+			// 	var that=this;
+		 //        console.log('refresh')
+		 //        setTimeout(function () {
+		 //            // uni.stopPullDownRefresh();  //停止下拉刷新动画
+			// 		// 跳转商品购买 (这种跳转方式在H5上只能用相对路径)
+			// 		uni.navigateTo({url:'/pages/camera/index'});
+			// 		// that.chooseImage();
+		 //        }, 1000);
+		 //    },
 
 		methods: {
+			pageChange(e){
+				let current = e.target.current
+				if(current == 0){
+					
+				}
+			},
+			
 			// 赠送
 			handleGive(){
 				this.chatList = [
