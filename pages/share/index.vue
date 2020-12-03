@@ -20,11 +20,23 @@
 						<view class="text tk-acumin-pro">Current Songs</view>
 					</view>
 					<view class="shareBtn" v-if="isactive==0">
-						<image @click="YQsubmit(1)" class="btn-image" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu3.png'" mode="aspectFit"></image>
+						<view class="icon" @tap="YQsubmit" :data-id="0">邀请一起喝</view>
+					</view>
+					<view class="shareBtn1" v-else-if="isactive==1">
+						<view class="icon"  @tap="YQsubmit" :data-id="1" >等他回应</view>
+					</view>
+					<view class="shareBtn2"  v-else-if="isactive==2">
+						<view class="icon" @tap="YQsubmit" :data-id="2" >她接过酒杯</view>
+					</view>
+					<view class="shareBtn2"  v-else-if="isactive==3" >
+						<view class="icon" @tap="YQsubmit" :data-id="3" >已将微信发送给你</view>
+					</view>
+					<view class="shareBtnGroup" v-if="isactive==4">
+						<image  @tap="YQsubmit" :data-id="4" class="btn-image" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu3.png'" mode="aspectFit"></image>
 						<image class="btn-image btn-image1" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu4.png'" mode="aspectFit"></image>
 					</view>
-					<view class="shareBtn" v-if="isactive==1">
-						<image @click="YQsubmit(0)" class="btn-image" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu1.png'" mode="aspectFit"></image>
+					<view class="shareBtnGroup" v-if="isactive==5">
+						<image  @tap="YQsubmit" :data-id="5" class="btn-image" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu1.png'" mode="aspectFit"></image>
 						<image class="btn-image btn-image1" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu2.png'" mode="aspectFit"></image>
 					</view>
 					
@@ -123,13 +135,21 @@
 				]
 				this.inputValue = ""
 			},
-			YQsubmit(num){
-				console.log(num)
-				
-				if(num==0){
-					this.isactive=0;
-				}else if(num==1){
+			YQsubmit(e){
+				console.log(e)
+				var type=e.currentTarget.dataset.id;
+				if(type==0){
 					this.isactive=1;
+				}else if(type==1){
+					this.isactive=2;
+				}else if(type==2){
+					this.isactive=3;
+				}else if(type==3){
+					this.isactive=4;
+				}else if(type==4){
+					this.isactive=5;
+				}else if(type==5){
+					this.isactive=0;
 				}
 			}
 			
