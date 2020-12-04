@@ -5,7 +5,9 @@
 			<view class="right-icon" ></view>
 			<view class="title">爆屏大礼包</view> 
 		</view>
+		<view style="display: flex;justify-content: center;">
 		<image :src="giftUrl" class="gift-img" :style="{'marginTop':`${iStatusBarHeight*2 + 120}rpx`}" mode="aspectFill"></image>
+		</view>
 		<view class="inputWapper">
 			<view class="label">爆屏大礼包</view>
 			<view class="input">

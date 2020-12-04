@@ -35,7 +35,7 @@
 		box-sizing: border-box;
 	}
 	
-	.gift-img{width: 360rpx;transform: translate(50%);height: 480rpx;}
+	.gift-img{width: 360rpx;height: 480rpx;}
 	
 	.inputWapper{padding: 10rpx;border-radius: 10rpx; box-sizing: border-box; margin: 0 20rpx;margin-top:40rpx; background-color: rgb(27,23,45);height: 90rpx;display: flex;}
 	.inputWapper .label{font-size: 32rpx;line-height: 70rpx;color: #F5F5F5;width: 200rpx;text-align: left; }
