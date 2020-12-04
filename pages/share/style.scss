@@ -16,7 +16,6 @@
 		box-sizing: border-box;
 		position: relative;
 		align-items: center;
-		margin-top: 30rpx;
 	}
 	.goBack{
 		position: absolute;
@@ -88,10 +87,19 @@
 		left: 20rpx;
 		
 	}
-	.textWapper image{
-		width: 100%;
+	.image-wapper{
+		height: 56rpx;
+		display: flex;
+	}
+	.textWapper .image{
+		width: 220rpx;
 		height: 100%;
 	}
+	.text-image{
+		height: 100rpx;
+		width: 400rpx;
+	}
+	
 	.textWapper .icon{
 		display: inline-block;
 		text-align: center;

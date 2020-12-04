@@ -68,7 +68,7 @@ page,.content{
 	width: 440upx;
 	height: 430upx;
 	border-radius: 140upx;
-	background-color: rgb(191 114 172 / 30%);
+	background-color: rgba(68,19,54,0.5);
 	margin-bottom: 10upx;
 	position: relative;
 }
@@ -124,7 +124,7 @@ page,.content{
 .table .tableRight .tableItem{
 	width: 250upx;
 	height: 250upx;
-	background-color: rgba(56,13,134,.3);
+	background-color: rgb(0,160,233,0.15);
 	border-radius: 100upx;
 	margin: auto;
 	margin-top: -60rpx;
@@ -132,8 +132,8 @@ page,.content{
 	position: relative;
 }
 .table .tableRight .tableItem .seat{
-	width: 120upx;
-	height: 120upx;
+	width: 150upx;
+	height: 150upx;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -158,10 +158,21 @@ page,.content{
 	padding: 5px 20px;
 	margin-top: 50upx;
 	height: 139upx;
-	// position: absolute;
 	top: 182upx;
 }
-.textWapper image{width: 100%;height: 100%;}
+.image-wapper{
+	height: 56rpx;
+	display: flex;
+}
+.textWapper .image{
+	width: 280rpx;
+	height: 100%;
+}
+.text-image{
+	height: 100rpx;
+	width: 400rpx;
+}
+
 .textWapper .icon{
 	height: 20px;
 	padding: 10upx 20upx;
@@ -175,16 +186,14 @@ page,.content{
 }
 .textWapper .icon .icon_text{
 	margin-right: 35rpx;
-	font-family:"Acumin Variable Concept"!important;;
 	color:#54a77f;
 	font-size:38rpx;
 	
 }
 .textWapper .icon .sex{
-	font-family:"Acumin Variable Concept"!important;
+	font-weight: bold;
 	color:#884697;
 	font-size:38rpx;
-	
 }
 .textWapper .text{
 	font-size: 30px;

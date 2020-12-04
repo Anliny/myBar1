@@ -21,8 +21,12 @@
 					</view>
 				</view>
 				<view class="textWapper">
-					<view class="icon tk-acumin-pro">Live</view>
-					<view class="text tk-acumin-pro">Current Songs</view>
+					<!-- <view class="icon tk-acumin-pro">Live</view> -->
+					<!-- <view class="text tk-acumin-pro">Current Songs</view> -->
+					<view class="image-wapper">
+						<image class="image" src="../../static/images/live_02.png" mode="aspectFit"></image>
+					</view>
+					<image class="text-image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/zy_01.png" mode="aspectFit"></image>
 				</view>
 				<view :style="{ height: 91 - iStatusBarHeight + 'px'}" class="empetTop"></view>
 				<view class="chatContanner" style="position: relative;" >

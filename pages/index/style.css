@@ -60,7 +60,19 @@
 		position: absolute;
 		z-index: 5;
 	}
-	.textWapper image{width: 100%;height: 100%;}
+	.image-wapper{
+		height: 56rpx;
+		display: flex;
+	}
+	.textWapper .image{
+		width: 160rpx;
+		height: 100%;
+	}
+	.text-image{
+		height: 100rpx;
+		width: 400rpx;
+	}
+	
 	.textWapper .icon{
 		height: 20px;
 		    color: #2d8081;
@@ -95,7 +107,7 @@
 		max-height: 560upx;
 	}
 	.chatContanner .chatItem {
-		background-color: rgba(82,52,102,30%);
+		background-color: rgba(118,118,128,0.25);
 		border-radius: 86.67upx;
 		padding:0 20upx;
 		margin-top: 20rpx;
@@ -132,10 +144,10 @@
 	}
 	
 	.chatContanner .systemChatItem{
-		background: -webkit-linear-linear-gradient(90deg, rgba(78,116,179,.68), rgba(160,132,168,0.7));
-		background: -moz-linear-gradient(90deg, rgba(78,116,179,.68), rgba(160,132,168,0.7));
-		background: -o-linear-gradient(90deg, rgba(78,116,179,.68), rgba(160,132,168,0.7));
-		background: linear-gradient(90deg, rgba(78,116,179,.68), rgba(160,132,168,0.7));
+		background: -webkit-linear-linear-gradient(90deg, rgba(78,116,179,.5), rgba(160,132,168,0.5));
+		background: -moz-linear-gradient(90deg, rgba(78,116,179,.5), rgba(160,132,168,0.5));
+		background: -o-linear-gradient(90deg, rgba(78,116,179,.5), rgba(160,132,168,0.5));
+		background: linear-gradient(90deg, rgba(78,116,179,.5), rgba(160,132,168,0.5));
 		border-radius: 86.67upx;
 		padding:0 20upx;
 		margin-top: 20rpx;

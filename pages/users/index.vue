@@ -15,11 +15,16 @@
 		    </swiper>
 		</uni-swiper-dot>
 		<view class="textWapper">
-			<view class="icon" @tap="submitBoy" data-id="1">
-				<text class="icon_text tk-acumin-pro">Live</text>
-				<text class="sex">{{BoyText}}</text>
+			<view class="image-wapper" v-if='!queryBoy'>
+				<image class="image" @click="submitBoy(0)" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/1-1_03.png" mode="aspectFit"></image>
+				<image class="image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/1-2_03.png" mode="aspectFit"></image>
 			</view>
-			<view class="text tk-acumin-pro">Current Songs</view>
+			<view class="image-wapper" v-else='queryBoy'>
+				<image class="image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/2-1_03.png" mode="aspectFit"></image>
+				<image class="image" @click="submitBoy(1)" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/2-2_03.png" mode="aspectFit"></image>
+			</view>
+				<image class="text-image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/zy_01.png" mode="aspectFit"></image>
+			
 		</view>
 		<view class="bottles">
 			<image :src="bottles" mode="scaleToFill"></image> 
@@ -37,7 +42,6 @@
 						class="user" 
 						:src="user.userUrl" 
 						mode="scaleToFill" @tap="mySubmit" :data-id="user.userId">
-						
 					</image>
 					<view class="number">{{table.tabelNumber}}</view>
 				</view>
@@ -60,7 +64,6 @@
 		data() {
 			return {
 				queryBoy:0,//0  女 1  男
-				BoyText:null,
 				BGUrl: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/bg.jpg',
 				tabelBg: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/tableBG.png',
 				bottles:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/users/bottles.png',
@@ -74,7 +77,6 @@
 		onLoad() {
 			this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight
 			this.info = userData
-			this.BoyText = 'griles'
 		},
 		methods: {
 			change(e) {
@@ -91,11 +93,9 @@
 				// 点击过后 请求输入，切换回到第一屏
 				this.current = 0
 				if(this.queryBoy == 0){
-					this.BoyText = 'boy'
 					this.queryBoy = 1
 					this.info = userDataGriles
 				} else {
-					this.BoyText = 'griles'
 					this.queryBoy = 0
 					this.info = userData
 				}

@@ -15,31 +15,36 @@
 		<swiper :loop="false" class="imageContainer" :style="{height:`calc(100% - ${iStatusBarHeight*2+240}rpx)`}" previous-margin="0rpx" next-margin="45rpx" >
 			<swiper-item class="swiperitem"  v-for="(item,index) in imgList" :key="index">
 				<view class="itemWapper" :style="{backgroundImage:'url('+item+')'}">
-					<view class="textWapper">
-						<view class="icon">Live</view>
-						<view class="text tk-acumin-pro">Current Songs</view>
+					<view class="item-bg">
+						<view class="textWapper">
+							<!-- view class="icon">Live</view>
+							<view class="text tk-acumin-pro">Current Songs</view> -->
+							<view class="image-wapper">
+									<image class="image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/b_03.png" mode="aspectFit"></image>
+								</view>
+								<image class="text-image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/zy_01.png" mode="aspectFit"></image>
+						</view>
+						<view class="shareBtn" v-if="isactive==0">
+							<view class="icon" @tap="YQsubmit" :data-id="0">邀请一起喝</view>
+						</view>
+						<view class="shareBtn1" v-else-if="isactive==1">
+							<view class="icon"  @tap="YQsubmit" :data-id="1" >等他回应</view>
+						</view>
+						<view class="shareBtn2"  v-else-if="isactive==2">
+							<view class="icon" @tap="YQsubmit" :data-id="2" >她接过酒杯</view>
+						</view>
+						<view class="shareBtn2"  v-else-if="isactive==3" >
+							<view class="icon" @tap="YQsubmit" :data-id="3" >已将微信发送给你</view>
+						</view>
+						<view class="shareBtnGroup" v-if="isactive==4">
+							<image  @tap="YQsubmit" :data-id="4" class="btn-image" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu3.png'" mode="aspectFit"></image>
+							<image class="btn-image btn-image1" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu4.png'" mode="aspectFit"></image>
+						</view>
+						<view class="shareBtnGroup" v-if="isactive==5">
+							<image  @tap="YQsubmit" :data-id="5" class="btn-image" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu1.png'" mode="aspectFit"></image>
+							<image class="btn-image btn-image1" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu2.png'" mode="aspectFit"></image>
+						</view>
 					</view>
-					<view class="shareBtn" v-if="isactive==0">
-						<view class="icon" @tap="YQsubmit" :data-id="0">邀请一起喝</view>
-					</view>
-					<view class="shareBtn1" v-else-if="isactive==1">
-						<view class="icon"  @tap="YQsubmit" :data-id="1" >等他回应</view>
-					</view>
-					<view class="shareBtn2"  v-else-if="isactive==2">
-						<view class="icon" @tap="YQsubmit" :data-id="2" >她接过酒杯</view>
-					</view>
-					<view class="shareBtn2"  v-else-if="isactive==3" >
-						<view class="icon" @tap="YQsubmit" :data-id="3" >已将微信发送给你</view>
-					</view>
-					<view class="shareBtnGroup" v-if="isactive==4">
-						<image  @tap="YQsubmit" :data-id="4" class="btn-image" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu3.png'" mode="aspectFit"></image>
-						<image class="btn-image btn-image1" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu4.png'" mode="aspectFit"></image>
-					</view>
-					<view class="shareBtnGroup" v-if="isactive==5">
-						<image  @tap="YQsubmit" :data-id="5" class="btn-image" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu1.png'" mode="aspectFit"></image>
-						<image class="btn-image btn-image1" :src="'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/home/anniu2.png'" mode="aspectFit"></image>
-					</view>
-					
 					<image class="gift" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/share/gift.png" mode="scaleToFill"></image>	
 				</view>
 			</swiper-item>
@@ -191,5 +196,13 @@
 		width: 100%;
 		height: 100%;
 		background-size: 100% auto;
+	}
+	.item-bg{
+		width: calc(100% - 20rpx);
+		background: rgba(35,24,21,0.2);
+		height:340rpx;
+		position: absolute;
+		bottom: 0;
+		z-index: 30;
 	}
 </style>
