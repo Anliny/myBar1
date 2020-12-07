@@ -1,12 +1,12 @@
 <template>
-	<view class="content" :style="{backgroundImage:`url(${BGUrl})`}" >
+	<view class="content" :style="{backgroundImage:`url(${!data.isVideo ? BGUrl : BGUrl})`}" >
 		<!-- <view :style="{ height: iStatusBarHeight + 'px'}"></view> -->
 		<view class="page-bar" :style="{top:`${iStatusBarHeight}px`}">
 			<image @click="handleGoBack" class="left-icon" :src="leftIocon" mode="aspectFill"></image>
 			<view class="right-icon" ></view>
 			<view class="title">发布详情</view> 
 		</view>
-		<video class="video"  :id="`video${data.id}`"
+		<video class="video" v-if="data.isVideo"  :id="`video${data.id}`"
 			preload="true"
 			webkit-playsinline="true"
 			x5-video-player-type="h5"
@@ -82,6 +82,7 @@
 				  mediaUrl:'http://lilian007.oss-cn-shanghai.aliyuncs.com/5.mp4',
 				  chat:99,
 				  enjoy:12,
+				  isVideo:true,
 				  comments:[
 						{
 							avatar:'https://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/avatar1.png',

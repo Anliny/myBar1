@@ -80,25 +80,25 @@
 	
 	
 	.textWapper{
-		padding: 5px 20px;
+		padding: 5px;
 		height: 208rpx;
 		position: absolute;
 		bottom: 80rpx;
 		left: 20rpx;
 		
 	}
-	.image-wapper{
-		height: 56rpx;
-		display: flex;
-	}
-	.textWapper .image{
-		width: 220rpx;
-		height: 100%;
-	}
-	.text-image{
-		height: 100rpx;
-		width: 400rpx;
-	}
+	// .image-wapper{
+	// 	height: 56rpx;
+	// 	display: flex;
+	// }
+	// .textWapper .image{
+	// 	width: 220rpx;
+	// 	height: 100%;
+	// }
+	// .text-image{
+	// 	height: 100rpx;
+	// 	width: 400rpx;
+	// }
 	
 	.textWapper .icon{
 		display: inline-block;
@@ -159,7 +159,7 @@
 	background-color: rgb(231,47,85);
 	position: absolute;
 	bottom: 20rpx;
-	left: 10rpx;
+	left: 22rpx;
 }
 .shareBtn1{
 	height: 85rpx;

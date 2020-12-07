@@ -74,10 +74,7 @@
 		left: 20rpx;
 		z-index: 10;
 	}
-	.textWapper image{
-		width: 100%;
-		height: 100%;
-	}
+
 	.textWapper .icon{
 		text-align: center;
 		line-height: 20px;
@@ -160,14 +157,14 @@
 	.chatContanner .chatItem .userIcon {
 		height: 86.67upx;
 		width: 86.67upx;
-		
+		margin-right: 10rpx;
 	}
 	.chatContanner .chatItem .text{
 		font-size: 28upx;
 		// font-weight: bolder;
 		color: #FFFFFF;
 		min-height: 30rpx;
-		line-height: 30rpx;
+		line-height: 46rpx;
 		flex:1;
 	}
 	

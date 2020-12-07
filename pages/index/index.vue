@@ -1,10 +1,6 @@
 <template>
-	<swiper style="height: 100%;width: 100%;" :current="1" @change='pageChange'	 class="swiper" :indicator-dots="false" :autoplay="false" :vertical='true' :duration="duration">
-		<swiper-item>
-			<hycamera class="videoSUBMIT"   @runMethod="getCarmera"></hycamera>
-		</swiper-item>
-		<swiper-item>
-			<view class="content" :style="{backgroundImage:`url(${BGUrl})`}" >
+
+			<view class="content" :style="{backgroundImage:`url(${BGUrl})`}"  @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend">
 				<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
 				<view class="header" ref="refHeader">
 					<view class="logo">
@@ -26,7 +22,7 @@
 					<view class="image-wapper">
 						<image class="image" src="../../static/images/live_02.png" mode="aspectFit"></image>
 					</view>
-					<image class="text-image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/zy_01.png" mode="aspectFit"></image>
+					<image class="text-image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/static/111_03.png" mode="aspectFit"></image>
 				</view>
 				<view :style="{ height: 91 - iStatusBarHeight + 'px'}" class="empetTop"></view>
 				<view class="chatContanner" style="position: relative;" >
@@ -104,23 +100,34 @@
 					</view>
 				</n-transition>
 				<image class="fillImage" v-if="isShowFillImage"  :src="isShowFillImage ? 'https://atour-1300409046.cos.ap-shanghai.myqcloud.com/APNG/%E5%9B%9B%E5%8F%B6%E8%8D%89.png':''" mode="scaleToFill"></image>
+				<uniLocker :isshow="isShow" classname="bounceInDown" title="菜单" :lockermenu="lockerMenu" @close="close" >
+					<hycamera class="videoSUBMIT" @closeCamera="closeCamera"   @runMethod="getCarmera"></hycamera>
+				</uniLocker>
 			</view> 
-		</swiper-item>
-	</swiper>
 	
 </template>
 
 <script>
 	import nTransition from "@/components/n-transition/n-transition.vue"
 	import hycamera from "@/components/shusheng-hycamera/shusheng-hycamera.vue"
+	
+	import uniLocker from '@/components/xiaolangtou-locker/uni-locker.vue'
+
 	// import hycamera from "@/components/shusheng-hycamera/shusheng-hycamera.vue"
 	export default {
 		components:{
-			nTransition,hycamera
+			nTransition,hycamera,uniLocker 
 			// hycamera
 		},
 		data() {
 			return {
+				flag: 0,
+				text: '',
+				lastX: 0,
+				lastY: 0,
+
+				
+				isShow:false,
 				swiperCurrent:0,
 				isIOSBottomHeight:0,
 				iStatusBarHeight: 0,
@@ -261,6 +268,94 @@
 		 //    },
 
 		methods: {
+			handletouchmove: function(event) {
+			            // console.log(event)
+			            if (this.flag !== 0) {
+			                return;
+			            }
+			            let currentX = event.touches[0].pageX;
+			            let currentY = event.touches[0].pageY;
+			            let tx = currentX - this.lastX;
+			            let ty = currentY - this.lastY;
+			            let text = '';
+			            this.mindex = -1;
+						
+			            //左右方向滑动
+			            if (Math.abs(tx) > Math.abs(ty)) {
+			                if (tx < 0) {
+			                    text = '向左滑动';
+			                    this.flag = 1;
+			                //  this.getList();  //调用列表的方法
+			                } else if (tx > 0) {
+			                    text = '向右滑动';
+			                    this.flag = 2;
+			                }
+			            }
+			            //上下方向滑动
+			            else {
+			                if (ty < 0) {
+			                    text = '向上滑动';
+			                    this.flag = 3;
+			                //  this.getList();  //调用列表的方法
+			                } else if (ty > 0) {
+			                    text = '向下滑动';
+			                    this.flag = 4;
+								this.isShow = true
+			                }
+			            }
+			 
+			            //将当前坐标进行保存以进行下一次计算
+			            this.lastX = currentX;
+			            this.lastY = currentY;
+			            this.text = text;
+			        },
+			        handletouchstart: function(event) {
+			            // console.log(event)
+			            this.lastX = event.touches[0].pageX;
+			            this.lastY = event.touches[0].pageY;
+			        },
+			        handletouchend: function(event) {
+			            this.flag = 0;
+			            this.text = '没有滑动';
+			        },
+			
+			// 关闭抽屉
+			close(){
+				this.isShow = false
+			},
+			
+			// 
+			closeCamera(){
+				this.isShow = false
+			},
+			
+			getCarmera(type,res){
+				console.log(type,res)
+				uni.showToast({
+				    title: '成功'+type,
+				    duration: 2000
+				});
+				setTimeout(function(){
+					var photolist=[];
+					if(type=='photo'){
+						//图片  res.tempImagePath  图片地址tempImagePath
+						console.log('photo:'+res.tempImagePath);
+						uni.setStorageSync('photo_video',res.tempImagePath);
+						photolist=[1,res.tempImagePath];
+						
+					}else if(type=='vedio'){
+						//录像图片 res.tempImagePath    tempThumbPath
+						uni.setStorageSync('photo_video',res.tempThumbPath);
+						photolist=[2,res.tempThumbPath,res.tempVideoPath];
+						//tempVideoPath
+						console.log('photo:'+res.tempThumbPath+'---video:'+res.tempVideoPath);
+					    //录像地址 res.tempVideoPath
+					}
+					uni.setStorageSync('photo_video',photolist);
+					uni.navigateTo({url:'/pages/photos/index'});
+				},2000);
+			},
+			
 			pageChange(e){
 				let current = e.target.current
 				if(current == 0){
@@ -409,25 +504,4 @@
 	  background:linear-gradient(90deg, #68248b, #cf6a8e);
 	  border-radius: 8rpx;
 	}
-	/* /deep/ .uni-swiper-wrapper{
-		overflow: visible;
-	}
-	/deep/ .uni-swiper-dots-horizontal{
-		bottom: -30rpx;
-	}
-	/deep/ .uni-swiper-dots{
-		background:linear-gradient(#fff, #b4b4b4);
-		border-radius: 8rpx;
-	}
-	/deep/ .uni-swiper-dots-horizontal .uni-swiper-dot{
-		margin-right: 0;
-		width: 60rpx;
-		height: 8rpx;
-		border-radius:0;
-		
-	}
-	/deep/ .uni-swiper-dots-horizontal .uni-swiper-dot-active{
-		background:linear-gradient(90deg, #68248b, #cf6a8e);
-		border-radius: 8rpx;
-	} */
 </style>

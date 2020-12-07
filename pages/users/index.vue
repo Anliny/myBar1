@@ -15,7 +15,7 @@
 		    </swiper>
 		</uni-swiper-dot>
 		<view class="textWapper">
-			<view class="image-wapper" v-if='!queryBoy'>
+			<view class="image-wapper" v-if='queryBoy'>
 				<image class="image" @click="submitBoy(0)" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/1-1_03.png" mode="aspectFit"></image>
 				<image class="image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/1-2_03.png" mode="aspectFit"></image>
 			</view>
@@ -23,7 +23,7 @@
 				<image class="image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/2-1_03.png" mode="aspectFit"></image>
 				<image class="image" @click="submitBoy(1)" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/2-2_03.png" mode="aspectFit"></image>
 			</view>
-				<image class="text-image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/zy_01.png" mode="aspectFit"></image>
+				<image class="text-image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/static/113_03.png" mode="aspectFit"></image>
 			
 		</view>
 		<view class="bottles">

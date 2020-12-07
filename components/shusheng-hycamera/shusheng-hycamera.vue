@@ -2,13 +2,17 @@
 	<view class="hycamera">
 		<cover-image class="contentCamera" @tap="videoback" :src="cameraIcon" mode="scaleToFill"></cover-image>
 		<cover-view class="textWapper">
-			<cover-view class="icon tk-acumin-pro">Live</cover-view>
-			<cover-view class="text tk-acumin-pro">Current Songs</cover-view>
+			<!-- <cover-view class="icon tk-acumin-pro">Live</cover-view>
+			<cover-view class="text tk-acumin-pro">Current Songs</cover-view> -->
+			<cover-view class="image-wapper">
+				<cover-image class="image" src="../../static/images/live_02.png" mode="aspectFit"></cover-image>
+			</cover-view>
+			<cover-image class="text-image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/static/111_03.png" mode="aspectFit"></cover-image>
 		</cover-view>
 		<cover-view :class="buttonClass" @touchstart="buttonStart" @touchend="buttonEnd">
 			{{buttonNumber}}
 		</cover-view>
-		 <cover-view class="down">
+		 <cover-view class="down" @click="handleDown">
 			 <cover-image  :src="downIcon" mode="scaleToFill"></cover-image>
 		 </cover-view>
 		
@@ -42,6 +46,9 @@
 			this.cameraCTX = uni.createCameraContext();
 		},
 		methods: {
+			handleDown(){
+				this.$emit('closeCamera')
+			},
 			videoback(){
 				var back=this.back;
 				console.log('back======'+back+'----------');
@@ -136,7 +143,7 @@
 		width: 46rpx;
 		height: 38rpx;
 		right: 53rpx;
-		top: 114rpx;
+		top: 150rpx;
 		z-index:99;
 	}
 	.hycamera-camera {
@@ -232,5 +239,17 @@
 		color: #fff;
 		line-height: 45px;
 
+	}
+	.image-wapper{
+		height: 56rpx;
+		display: flex;
+	}
+	.textWapper .image{
+		width: 160rpx;
+		height: 100%;
+	}
+	.text-image{
+		max-height: 130rpx;
+		width: 500rpx;
 	}
 </style>

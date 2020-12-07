@@ -1,5 +1,5 @@
 <template>
-	<view class="content" :style="{background:`url(${BGUrl})`}" style="background-size: 750upx;">
+	<view class="content" :style="{backgroundImage:`url(${BGUrl})`}" style="background-size: 750upx;">
 		<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
 		<view style="height: 75rpx;"></view>
 		<view class="header">
@@ -30,8 +30,12 @@
 					</view>
 					
 					<view class="textWapper">
-						<view class="icon tk-acumin-pro">{{item.song.icon}}</view>
-						<view class="text tk-acumin-pro">{{item.song.name}}</view>
+						<!-- <view class="icon tk-acumin-pro">{{item.song.icon}}</view>
+						<view class="text tk-acumin-pro">{{item.song.name}}</view> -->
+						<view class="image-wapper">
+							<image class="image" src="../../static/images/live_02.png" mode="aspectFit"></image>
+						</view>
+						<image class="text-image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/static/113_03.png" mode="aspectFit"></image>
 					</view>
 					<view class="chatContanner">
 						<view class="chatView" style="">

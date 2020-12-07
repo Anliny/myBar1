@@ -22,7 +22,7 @@
 							<view class="image-wapper">
 									<image class="image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/b_03.png" mode="aspectFit"></image>
 								</view>
-								<image class="text-image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/mine/zy_01.png" mode="aspectFit"></image>
+								<image class="text-image" src="http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/static/114_03.png" mode="aspectFit"></image>
 						</view>
 						<view class="shareBtn" v-if="isactive==0">
 							<view class="icon" @tap="YQsubmit" :data-id="0">邀请一起喝</view>
