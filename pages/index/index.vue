@@ -1,6 +1,5 @@
 <template>
-
-			<view class="content" :style="{backgroundImage:`url(${BGUrl})`}"  @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend">
+			<view class="content" v-bounce :style="{backgroundImage:`url(${BGUrl})`}"  @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend">
 				<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
 				<view class="header" ref="refHeader">
 					<view class="logo">
@@ -112,6 +111,7 @@
 	import hycamera from "@/components/shusheng-hycamera/shusheng-hycamera.vue"
 	
 	import uniLocker from '@/components/xiaolangtou-locker/uni-locker.vue'
+   import Bounce from 'vue-bounce'
 
 	// import hycamera from "@/components/shusheng-hycamera/shusheng-hycamera.vue"
 	export default {
@@ -266,8 +266,20 @@
 			// 		// that.chooseImage();
 		 //        }, 1000);
 		 //    },
+		 
+		 onReady:function(options){
+			 this.disableTachMove()
+		 },
 
 		methods: {
+			disableTachMove(){
+				console.log(document)
+				document.body.addEventListener('touchmove', function (e) { 
+					e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果) 
+					console.log(e)
+				}, {passive: false}); //passive 参数不能省略，用来兼容ios和android
+			},
+			
 			handletouchmove: function(event) {
 			            // console.log(event)
 			            if (this.flag !== 0) {
