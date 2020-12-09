@@ -40,4 +40,30 @@
 	/* @import url("https://use.typekit.net/ngv0bfi.css") */
 	/* <link rel="stylesheet" href="https://use.typekit.net/ngv0bfi.css"> */
 	/* @import url("./static/font/iconfont.css"); */
+	
+	.page-bar{
+		height: 90rpx;
+		text-align: center;
+		font-size: 32rpx;
+		height: 90rpx;
+		color: #fff;
+		line-height: 90rpx;
+		z-index: 100;
+		position: absolute;
+		width: 100%;
+	}
+	.page-bar .left-icon{
+		height: 90rpx;
+		width: 90rpx;
+		float: left;		 
+		padding: 30rpx;
+		box-sizing: border-box;
+	}
+	.page-bar .right-icon{
+		height: 90rpx;
+		width: 90rpx;
+		float: right;		 
+		padding: 30rpx;
+		box-sizing: border-box;
+	}
 </style>

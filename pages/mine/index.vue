@@ -1,5 +1,7 @@
 <template>
 	<view class="content" :style="{background:`url(${BGUrl})`}" style="background-size: 750upx;">
+		<page-bar :title="`个人中心`" :leftIcon="leftIocon" :psitionTop="iStatusBarHeight" @pageBarGoBack="pageBarGoBack"></page-bar>
+		
 		<view class="header">
 			<image  class="head_img1" :src="`${head_img1}`"></image>
 			<image  class="head_img2" :src="`${head_img2}`"></image>
@@ -55,11 +57,13 @@
 
 <script>
 	// import adCell from '@/components/andy-adcell/andy-adcell.vue';
+	import pageBar from '@/components/pageBar.vue'
 	export default {
-		// components: {adCell},
+		components: {pageBar},
 		data() {
 			return {
 				
+				leftIocon:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/icon_03.png',
 				BGUrl: 'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/mine_bg.png',
 				head_img1:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/head_img1.png',
 				head_img2:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/static/images/head_img2.png',
@@ -76,11 +80,16 @@
 				ListIcon:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/MBMimg/pages/mine/fabu.png',
 				current: 0,
 				mode: 'round',
+				iStatusBarHeight:0
 			}
 		},
 		onLoad() {
+			this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight
 		},
 		methods: {
+			pageBarGoBack(){
+				uni.navigateBack()
+			},
 			change(e) {
 				this.current = e.detail.current;
 			},

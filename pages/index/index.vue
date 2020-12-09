@@ -1,6 +1,8 @@
 <template>
 			<view class="content" v-bounce :style="{backgroundImage:`url(${BGUrl})`}"  @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend">
 				<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
+				<page-bar :title="`首页`" :leftIcon="leftIocon" :psitionTop="iStatusBarHeight" @pageBarGoBack="pageBarGoBack"></page-bar>
+				
 				<view class="header" ref="refHeader">
 					<view class="logo">
 						<image :src="logo"   mode="scaleToFill"></image>
@@ -31,6 +33,11 @@
 								<view  v-for="item in chatList" :key="item.id" style="margin-bottom: 10upx;padding: 5rpx 0;">
 									<view class="chatItem" v-if="!item.type">
 										<view class="tableNumber" v-if="item.tableNumber">{{item.tableNumber}}</view>
+										<image class="userIcon" :src="item.userIcon" mode="scaleToFill"></image>
+										<view class="text">{{item.text}}</view>
+									</view>
+									<view class="chatItem" v-if="!item.type">
+										<!-- <view class="tableNumber" v-if="item.tableNumber">{{item.tableNumber}}</view> -->
 										<image class="userIcon" :src="item.userIcon" mode="scaleToFill"></image>
 										<view class="text">{{item.text}}</view>
 									</view>
@@ -111,12 +118,13 @@
 	import hycamera from "@/components/shusheng-hycamera/shusheng-hycamera.vue"
 	
 	import uniLocker from '@/components/xiaolangtou-locker/uni-locker.vue'
+	import pageBar from '@/components/pageBar.vue'
    import Bounce from 'vue-bounce'
 
 	// import hycamera from "@/components/shusheng-hycamera/shusheng-hycamera.vue"
 	export default {
 		components:{
-			nTransition,hycamera,uniLocker 
+			nTransition,hycamera,uniLocker,pageBar
 			// hycamera
 		},
 		data() {
@@ -126,6 +134,7 @@
 				lastX: 0,
 				lastY: 0,
 
+				leftIocon:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/icon_03.png',
 				
 				isShow:false,
 				swiperCurrent:0,
@@ -267,18 +276,22 @@
 		 //        }, 1000);
 		 //    },
 		 
-		 onReady:function(options){
-			 this.disableTachMove()
-		 },
+		 // onReady:function(options){
+			//  this.disableTachMove()
+		 // },
 
 		methods: {
-			disableTachMove(){
-				console.log(document)
-				document.body.addEventListener('touchmove', function (e) { 
-					e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果) 
-					console.log(e)
-				}, {passive: false}); //passive 参数不能省略，用来兼容ios和android
+			pageBarGoBack(){
+				uni.navigateBack()
 			},
+			
+			// disableTachMove(){
+			// 	console.log(document)
+			// 	document.body.addEventListener('touchmove', function (e) { 
+			// 		e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果) 
+			// 		console.log(e)
+			// 	}, {passive: false}); //passive 参数不能省略，用来兼容ios和android
+			// },
 			
 			handletouchmove: function(event) {
 			            // console.log(event)

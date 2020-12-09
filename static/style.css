@@ -7,15 +7,15 @@
 .appBar{
 	background-color: #0D0A0F;
 }
-	.image-wapper{
-		height: 56rpx;
-		display: flex;
-	}
-	.textWapper .image{
-		width: 160rpx;
-		height: 100%;
-	}
-	.text-image{
-		max-height: 130rpx;
-		width: 500rpx;
-	}
+.image-wapper{
+	height: 56rpx;
+	display: flex;
+}
+.textWapper .image{
+	width: 160rpx;
+	height: 100%;
+}
+.text-image{
+	max-height: 130rpx;
+	width: 500rpx;
+}

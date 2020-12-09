@@ -1,6 +1,8 @@
 <template>
 	<view class="content" :style="{background:`url(${BGUrl})`}" style="background-size: 750upx;">
 		<view class="appBar" :style="{ height: iStatusBarHeight + 'px'}"></view>
+		<page-bar :title="`首页`" :leftIcon="leftIocon" :psitionTop="iStatusBarHeight" @pageBarGoBack="pageBarGoBack"></page-bar>
+		
 		<uni-swiper-dot :info="info" :current="current" field="content" :mode="mode">
 		    <swiper class="swiper-box" @change="change">
 		        <swiper-item v-for="(item ,index) in info" :key="index">
@@ -59,8 +61,9 @@
 <script>
 	import uniSwiperDot from "@/components/uni-swiper-dot/uni-swiper-dot.vue"
     import {userData,userDataGriles,tableList,userData1} from "./mock.js"
+	import pageBar from '@/components/pageBar.vue'
 	export default {
-		components: {uniSwiperDot},
+		components: {uniSwiperDot,pageBar},
 		data() {
 			return {
 				queryBoy:0,//0  女 1  男
@@ -71,7 +74,9 @@
 				tableList:tableList,
 				current: 0,
 				mode: 'round',
-				iStatusBarHeight: 0
+				iStatusBarHeight: 0,
+				
+				leftIocon:'http://lilian007.oss-cn-shanghai.aliyuncs.com/mbm/icon_03.png',
 			}
 		},
 		onLoad() {
@@ -79,6 +84,10 @@
 			this.info = userData
 		},
 		methods: {
+			pageBarGoBack(){
+				uni.navigateBack()
+			},
+			
 			change(e) {
 				this.current = e.detail.current;
 			},
